@@ -37,8 +37,17 @@ See README_and_Mockups folder.
 
 2) Weekend - Start on making flagship graph, look for data for a secondary and tertiary graph. Continue learning about D3. Research how to make a modal. If permitted to use Anime.js, look into how to animate subsections. Research flat, minimalist design.
 
-3) Monday - Polish flagship graph, further knowledge of D3, try to make flagship graph look good. Start on left-div hover sub-visualizer - based on datasets see what kind of info I would want to show up.
+3) Monday - Polish flagship graph, further knowledge of D3, try to make flagship graph look good with data populated from API - try to render this feature to browser. Start on left-div hover sub-visualizer - based on datasets see what kind of info I would want to show up.
 
-4) Tuesday - Polish LinkedIn a little bit (this is part of my project because I want the footer to actual lead people to information about me. GET A REAL LINKEDIN PICTURE.)
+4) Tuesday - Polish LinkedIn a little bit (this is part of my project because I want the footer to actually lead people to information about me. GET A REAL LINKEDIN PICTURE.) Finish secondary and tertiary charts, render them. Work on secondary features and interactive elements.
 
-5) Wednesday - 
+5) Wednesday - Interactive elements and secondary features day. Look into dark mode/light mode. Birds eye positioning of elements.Finishing touches!
+
+6) Thursday - Update README and possibly more finishing touches if time permits.
+
+
+- BONUS FEATURES
+
+1) Light mode dark mode toggle with different color sets.
+2) modals at first landing on page as well as maybe for about the author section.
+3) screenshot button?
