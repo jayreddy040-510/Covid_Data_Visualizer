@@ -14,7 +14,7 @@ In COVID_Data_Visualizer, users will be able to:
 
 In addition, this project will include:
 
-1) An About modal describing where the data was soutrced from, instruction for use of the visualizer, and maybe even a small about the author section.
+1) An About modal describing where the data was sourced from, instruction for use of the visualizer, and maybe even a small about the author section.
 2) A production README.
 3) Light mode/Dark mode toggle button?
 
