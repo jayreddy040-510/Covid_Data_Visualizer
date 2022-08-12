@@ -20,7 +20,7 @@ In addition, this project will include:
 
 - WIREFRAME(S)
 
-See README_and_Mockups folder.
+![Getting Started](Covid_Data_Visualizer_Mockup.png)
 
 - TECHNOLOGIES, LIBRARIES, APIs
 
