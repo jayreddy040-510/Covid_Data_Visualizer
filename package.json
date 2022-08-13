@@ -1,0 +1,29 @@
+{
+  "name": "covid_data_visualizer",
+  "version": "1.0.0",
+  "description": "Background --- --- Visualizes data around COVID, tracking increases and falls in key elements. I especially would like to track vaccine adverse event reporting to indicate a lack of adverse event in contrary to certain bipartisan narratives. If there is enough interesting data, I would ideally like to make the entire visualizer and page using the VAERS sub database of the CDC's WONDER database. VAERS reports on vaccine events and is a self-reporting system so it tracks a lot of interesting data. The VAERS database is updated monthly by the CDC.",
+  "main": "script.js",
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "core-js": "^3.24.1",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

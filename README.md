@@ -1,9 +1,12 @@
-- BACKGROUND
-
+##Background
+---
+---
 Visualizes data around COVID, tracking increases and falls in key elements. I especially would like to track vaccine adverse event reporting to indicate a lack of adverse event in contrary to certain bipartisan narratives. If there is enough interesting data, I would ideally like to make the entire visualizer and page using the VAERS sub database of the CDC's WONDER database. VAERS reports on vaccine events and is a self-reporting system so it tracks a lot of interesting data. The VAERS database is updated monthly by the CDC.
 
 
-- FUNCTIONALITY & MVPs
+Functionality and MVP's
+---
+---
 
 In COVID_Data_Visualizer, users will be able to:
 
@@ -18,11 +21,15 @@ In addition, this project will include:
 2) A production README.
 3) Light mode/Dark mode toggle button?
 
-- WIREFRAME(S)
+Wireframe(s)
+---
+---
 
 ![Getting Started](Covid_Data_Visualizer_Mockup.png)
 
-- TECHNOLOGIES, LIBRARIES, APIs
+Technologies, Libraries, and API's
+---
+---
 
 1) D3.js
 2) Charts.js
@@ -31,7 +38,9 @@ In addition, this project will include:
 5) Pts.js
 5) Anime.js
 
-- IMPLEMENTATION TIMELINE
+Implementation Timeline
+---
+---
 
 1) Friday Afternoon - D3.js tutorials, troubleshooting API usage, and searching CDC WONDER for interesting data that I want to visualize.
 
@@ -46,7 +55,9 @@ In addition, this project will include:
 6) Thursday - Update README and possibly more finishing touches if time permits.
 
 
-- BONUS FEATURES
+Bonus Features
+---
+---
 
 1) Light mode dark mode toggle with different color sets.
 2) modals at first landing on page as well as maybe for about the author section.
