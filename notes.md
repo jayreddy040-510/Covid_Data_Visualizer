@@ -17,4 +17,19 @@ Notes
     2) pie chart/doughnut chart/multiseries pie/polar area/
     3) bar graph (duh) but look into ways to make this interactive
     4) vaccine shaped graphic
-    5) line chart stacked or line chart with progressive line animation
+    5) line chart stacked or line chart with progressive line animation with easing
+    6) streamgraph
+
+
+- 1st graph
+    - vaccine interactive map
+    - hovering over state gives mini legend of state acronym, series_complete_pop_pct (no booster but both doses of 2-dose vaccine or one dose of single-dose), and additional_doses_vax_pct maybe make them half integer incremented values out of 5 stars (e.g. (4.5/5 would be 90%))
+    - clicking on state brings up a modal that has several mini graph, a state map with lines a the county level, and can hover over counties to get county-specific vaccination/demographic data. things we're going to put on the modal per state:
+        - state title (not too prominent, maybe rng fonts)
+        - maybe animate modal popping up or graphics popping up using anime.js?
+        - state county map with hover over county info
+        - vaccine hesitancy number
+        - vaccination by demographic
+        - some indicator of morbidity/mortality per capita
+        - vaccine policy timeline per state
+
