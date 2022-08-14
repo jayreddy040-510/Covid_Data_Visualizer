@@ -12,8 +12,16 @@ body {
 svg {
     background-color: floralwhite;
 }
+#header {
+    display: flex;
+    
+}
+h1 {
+    font-size: 50px;
 
-#us-map {
+}
+
+#canvas {
     min-width: 1200px;
     min-height: 800px;
 }

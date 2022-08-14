@@ -2,24 +2,37 @@
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./dist/main.css" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-    <!-- <script src="geodata.json"></script> -->
-    <script src="./dist/main.js"></script>
-    <!-- ^^^needs a canvas!!! -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  -->
+
     <title>COVID Tracker</title>
-  </head>
-  <h1>A Year Of COVID</h1>
-  <body>
+</head>
+<!-- <h1>A <span id="year">Year</span><br> of COVID</h1> -->
 
-<svg id="us-map">
 
-</svg>
+<body>
 
-  </body>
+    <div id="header">
+        <h1>a</h1>
+        <h1 id="y">Y</h1>
+        <h1 id="e">E</h1>
+        <h1 id="a">A</h1>
+        <h1 id="r">R</h1>
+        <br>
+        <h1>of</h1>
+        <h1>COVID</h1>
+        </div>
+
+    <svg id="canvas"></svg>
+    
+
+
+    <script src="./dist/main.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</body>
 
 </html>
