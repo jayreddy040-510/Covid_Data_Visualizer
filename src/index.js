@@ -1,5 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => console.log(""));
 
+const stateBoundaryGeoJSON = 'https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json'
+
+const countryMap = d3.select('#us-map');
+let stateBoundaries;
 
 async function getData() {
     try{
@@ -11,9 +15,31 @@ async function getData() {
     }
   }
 
-  getData().then(res => console.log(res));
+  let drawMap = () => {
+    countryMap.selectAll('path')
+        .data(stateBoundaries)
+        .enter()
+        .append('path')
+            .attr('d', d3.geoPath())
+            .attr('class', 'state')
+  }
+  let percentVaccinated = getData().then(res => res);
 
 
-// console.log(d3);
+  d3.json(stateBoundaryGeoJSON).then(
+    (data, error) => {
+        if(error) {
+            console.log(log);
+        } else {
+            stateBoundaries = data.features;
+            console.log(stateBoundaries);
+            drawMap();
+        }
+    }
+  )
+
+
+  
+
 
  
