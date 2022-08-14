@@ -1,0 +1,19 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    background-color: floralwhite;
+}
+
+#us-map {
+    min-width: 1200px;
+    min-height: 800px;
+}

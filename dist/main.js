@@ -15,7 +15,7 @@
   \**********************/
 /***/ (function() {
 
-eval("window.addEventListener('DOMContentLoaded', () => console.log(\"workis it still workinging\"));\n\n\nasync function getData() {\n    try{\n      let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json`);\n      return response.json();\n    }catch(err){\n      console.error(err);\n      // Handle errors here\n    }\n  }\n\n  getData().then(res => console.log(res));\n\n\n\n \n\n//# sourceURL=webpack://covid_data_visualizer/./src/index.js?");
+eval("window.addEventListener('DOMContentLoaded', () => console.log(\"\"));\n\n\nasync function getData() {\n    try{\n      let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT location, series_complete_pop_pct WHERE location NOT IN ('BP2','DD2','GU','AS','FM','IH2','MH','MP','PR','PW','VA2','VI','UM') ORDER BY date DESC, location LIMIT 52`);\n      return response.json();\n    }catch(err){\n      console.error(err);\n      // Handle errors here\n    }\n  }\n\n  getData().then(res => console.log(res));\n\n\n// console.log(d3);\n\n \n\n//# sourceURL=webpack://covid_data_visualizer/./src/index.js?");
 
 /***/ })
 
