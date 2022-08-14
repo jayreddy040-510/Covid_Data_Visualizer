@@ -16,13 +16,13 @@ let stateBoundaries;
 //       // Handle errors here
 //     }
 //   }
-// let projection = d3.geoEquirectangular();
+let projection = d3.geoAlbers()
   let drawMap = () => {
 
     svg.selectAll("path")
     .data(stateBoundaries)
     .enter().append('path')
-    .attr('d', d3.geoPath())
+    .attr('d', d3.geoPath().projection(projection))
 
   }
 
