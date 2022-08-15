@@ -14,7 +14,7 @@ svg {
 }
 #header {
     display: flex;
-    
+
 }
 h1 {
     font-size: 50px;
@@ -22,6 +22,6 @@ h1 {
 }
 
 #canvas {
-    min-width: 1200px;
-    min-height: 800px;
+    min-width: 1000px;
+    min-height: 600px;
 }
