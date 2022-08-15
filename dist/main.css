@@ -21,6 +21,16 @@ h1 {
 
 }
 
+.state:hover {
+fill: goldenrod;
+cursor: pointer;
+}
+
+/* .state:active {
+    position: relative;
+    top: 2px;
+} */
+
 #canvas {
     min-width: 1000px;
     min-height: 600px;
