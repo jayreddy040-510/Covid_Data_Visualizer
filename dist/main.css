@@ -24,6 +24,13 @@ h1 {
 .state:hover {
 fill: goldenrod;
 cursor: pointer;
+position: relative;
+}
+
+.state:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    z-index: 1;
 }
 
 /* .state:active {
