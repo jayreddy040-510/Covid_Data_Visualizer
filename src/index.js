@@ -8,7 +8,7 @@ let pctPopVax;
 
 const getVaxData = async () => {
     try{
-        let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT location, series_complete_pop_pct WHERE location NOT IN ('BP2','US','DD2','GU','AS','FM','IH2','MH','MP','PW','VA2','VI','UM') ORDER BY date DESC, series_complete_pop_pct DESC LIMIT 52`);
+        let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT location, series_complete_pop_pct, additional_doses_vax_pct WHERE location NOT IN ('BP2','US','DD2','GU','AS','FM','IH2','MH','MP','PW','VA2','VI','UM') ORDER BY date DESC, series_complete_pop_pct DESC LIMIT 52`);
         let z = response.json();
         return z;
     }catch(err){
@@ -38,11 +38,17 @@ let drawMap = () => {
     .attr('d', d3.geoPath().projection(projection))
     .attr('stroke-width', '1.5')
     .attr('stroke','black')
-    .attr('data-name', d => d['properties'].STUSPS)
+    .attr('data-name', d => d['properties'].NAME)
     .attr("data-pct", (d) => {
         let name = d['properties'].STUSPS
         let state = data.find(state => state['location'] === name)
         let pct = (state['series_complete_pop_pct'])
+        return pct;
+    })
+    .attr("data-addpct", (d) => {
+        let name = d['properties'].STUSPS
+        let state = data.find(state => state['location'] === name)
+        let pct = (state['additional_doses_vax_pct'])
         return pct;
     })
     .attr('class','state')
@@ -50,6 +56,7 @@ let drawMap = () => {
         // that = this
         d3.select('#state-name').text(this.dataset.name)
         d3.select('#state-pct').text(`${this.dataset.pct}%`)
+        d3.select('#state-addpct').text(`${this.dataset.addpct}%`)
     })
     .attr('fill', (stateObj) => {
         

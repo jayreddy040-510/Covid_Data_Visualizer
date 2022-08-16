@@ -10,10 +10,11 @@ body {
 }
 
 svg {
-    background-color: grey;
+    background-color: rgb(74, 69, 69);
 }
 #header {
     display: flex;
+    size: 100px;
 
 }
 h1 {
