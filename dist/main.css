@@ -10,7 +10,7 @@ body {
 }
 
 svg {
-    background-color: rgb(74, 69, 69);
+    background-color: floralwhite;
 }
 #header {
     display: flex;
@@ -39,7 +39,13 @@ position: relative;
     top: 2px;
 } */
 
-#canvas {
-    min-width: 1000px;
+#canvas, #canvas2 {
+    min-width: 1200px;
     min-height: 600px;
+}
+
+.headings {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }

@@ -1,10 +1,24 @@
 window.addEventListener('DOMContentLoaded', async () => {
 
 const stateBoundaryURL = 'https://raw.githubusercontent.com/loganpowell/census-geojson/master/GeoJSON/20m/2021/state.json'
+
 const svg = d3.select('#canvas')
+const svg2 = d3.select('#canvas2')
 const projection = d3.geoAlbers().scale(1250).translate([500,300])
 let stateBoundaries;
-let pctPopVax;
+let countyBoundaries;
+
+const strongHesitant = async () => {
+    try{
+        let res = await fetch(`https://data.cdc.gov/resource/q9mh-h2tw.json?$query=SELECT state_code, avg(estimated_strongly_hesitant) GROUP BY state_code`);
+        return res.json();
+    } catch(err) {
+        console.error(err);
+    }
+}
+
+const vaxHesitationData = await strongHesitant();
+console.log(vaxHesitationData);
 
 const getVaxData = async () => {
     try{
@@ -58,6 +72,9 @@ let drawMap = () => {
         d3.select('#state-pct').text(`${this.dataset.pct}%`)
         d3.select('#state-addpct').text(`${this.dataset.addpct}%`)
     })
+    .on('mouseout', () => {
+        d3.select('#state-name').text('select a state')
+    })
     .attr('fill', (stateObj) => {
         
         let name = stateObj['properties']['STUSPS']
@@ -93,14 +110,5 @@ d3.json(stateBoundaryURL).then(
     }
     )
     
-    
-    // let orange = () => {
-    // let bananana = () => {
-    // console.log('inside')
-    // }
-    // return bananana();
-    // }
-    // orange();
-    
-    
+
 })
