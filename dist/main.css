@@ -10,7 +10,7 @@ body {
 }
 
 svg {
-    background-color: floralwhite;
+    background-color: grey;
 }
 #header {
     display: flex;
@@ -22,7 +22,7 @@ h1 {
 }
 
 .state:hover {
-fill: goldenrod;
+fill: darkslateblue;
 cursor: pointer;
 position: relative;
 }

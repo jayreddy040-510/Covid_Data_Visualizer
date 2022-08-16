@@ -8,7 +8,7 @@ let pctPopVax;
 
 const getVaxData = async () => {
     try{
-        let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT location, series_complete_pop_pct WHERE location NOT IN ('BP2','DD2','GU','AS','FM','IH2','MH','MP','PR','PW','VA2','VI','UM') ORDER BY date DESC, series_complete_pop_pct DESC LIMIT 52`);
+        let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT location, series_complete_pop_pct WHERE location NOT IN ('BP2','US','DD2','GU','AS','FM','IH2','MH','MP','PW','VA2','VI','UM') ORDER BY date DESC, series_complete_pop_pct DESC LIMIT 52`);
         let z = response.json();
         return z;
     }catch(err){
@@ -16,48 +16,60 @@ const getVaxData = async () => {
     }
 }
 
+
 let data =  await getVaxData();
-
-const range = data[0].series_complete_pop_pct - data[51].series_complete_pop_pct
+const min = +data[51].series_complete_pop_pct;
+const max = +data[0].series_complete_pop_pct;
+const range = max - min;
 const quintile = range/5;
+const firstQuint = min + quintile;
+const secondQuint = firstQuint + quintile;
+const thirdQuint = secondQuint + quintile;
+const fourthQuint = thirdQuint + quintile;
+console.log(min, firstQuint, secondQuint, thirdQuint, fourthQuint, max);
 
-
+// console.log(data.find(x => x['location'] === 'WY').series_complete_pop_pct)
+console.log(data);
 let drawMap = () => {
-    // console.log(stateBoundaries)
+    console.log(stateBoundaries)
     svg.selectAll("path")
     .data(stateBoundaries)
     .enter().append('path')
     .attr('d', d3.geoPath().projection(projection))
-    .attr('stroke-width', '4.0')
+    .attr('stroke-width', '1.5')
+    .attr('stroke','black')
+    .attr('data-name', d => d['properties'].STUSPS)
+    .attr("data-pct", (d) => {
+        let name = d['properties'].STUSPS
+        let state = data.find(state => state['location'] === name)
+        let pct = (state['series_complete_pop_pct'])
+        return pct;
+    })
     .attr('class','state')
+    .on('mouseover', function(x) {
+        // that = this
+        d3.select('#state-name').text(this.dataset.name)
+        d3.select('#state-pct').text(`${this.dataset.pct}%`)
+    })
     .attr('fill', (stateObj) => {
         
-        let name = stateObj['properties'].STUSPS
-        // if (name <= 'M') {
-        //     return 'tomato'
-        // } else {
-        //     return 'darkslateblue'
-        // }
-        
+        let name = stateObj['properties']['STUSPS']
+
         let state = data.find(state => state['location'] === name)
-        let pct = state['series_complete_pop_pct']
-        if (pct < 80) return 'firebrick'
-            // pct = state.series_complete_pop_pct
-            // if (pct < 70) {
-            //     return('red')
-            // }
+        let pct;
+        pct = (state['series_complete_pop_pct'])
+        
+        if (pct <= firstQuint) return 'firebrick'
+        else if (pct <= secondQuint && pct > firstQuint) return '#fc4e2a'
+        else if (pct <= thirdQuint && pct > secondQuint) return '#feb24c'
+        else if (pct <= fourthQuint && pct > thirdQuint) return '#fed976'
+        else if (pct > fourthQuint) return "#ffffb2"
         })
-    //     const res = await getVaxData();
-    //     let state = res.find(state => state['location'] === 'LA')
-    //     pct = state.series_complete_pop_pct
-    //     if (pct < 70) { let abc = () => {
-    //         console.log('red')
-    //     }
-    //     return abc();
-    // }
-    
-    .attr("data-tooltip", (d) => d['properties'].STUSPS)
-}
+
+
+            
+        }
+
 
 
 
