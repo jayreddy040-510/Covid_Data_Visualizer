@@ -1,12 +1,14 @@
 window.addEventListener('DOMContentLoaded', async () => {
+    
+
 
 const stateBoundaryURL = 'https://raw.githubusercontent.com/loganpowell/census-geojson/master/GeoJSON/20m/2021/state.json'
 
 const svg = d3.select('#canvas')
-const svg2 = d3.select('#canvas2')
 const projection = d3.geoAlbers().scale(1250).translate([500,300])
 let stateBoundaries;
-let countyBoundaries;
+let counter = 0;
+
 
 const strongHesitant = async () => {
     try{
@@ -18,11 +20,12 @@ const strongHesitant = async () => {
 }
 
 const vaxHesitationData = await strongHesitant();
-console.log(vaxHesitationData);
+vaxHesitationData.push({state_code: 'PR', avg_estimated_strongly_hestitant: 0})
+
 
 const getVaxData = async () => {
     try{
-        let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT location, series_complete_pop_pct, additional_doses_vax_pct WHERE location NOT IN ('BP2','US','DD2','GU','AS','FM','IH2','MH','MP','PW','VA2','VI','UM') ORDER BY date DESC, series_complete_pop_pct DESC LIMIT 52`);
+        let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT location, series_complete_pop_pct, additional_doses_vax_pct,  series_complete_5pluspop_pct, series_complete_18pluspop, series_complete_65pluspop WHERE location NOT IN ('BP2','US','DD2','GU','AS','FM','IH2','MH','MP','PW','VA2','VI','UM') ORDER BY date DESC, series_complete_pop_pct DESC LIMIT 52`);
         let z = response.json();
         return z;
     }catch(err){
@@ -32,6 +35,7 @@ const getVaxData = async () => {
 
 
 let data =  await getVaxData();
+
 const min = +data[51].series_complete_pop_pct;
 const max = +data[0].series_complete_pop_pct;
 const range = max - min;
@@ -40,7 +44,7 @@ const firstQuint = min + quintile;
 const secondQuint = firstQuint + quintile;
 const thirdQuint = secondQuint + quintile;
 const fourthQuint = thirdQuint + quintile;
-console.log(min, firstQuint, secondQuint, thirdQuint, fourthQuint, max);
+
 
 // console.log(data.find(x => x['location'] === 'WY').series_complete_pop_pct)
 console.log(data);
@@ -65,12 +69,75 @@ let drawMap = () => {
         let pct = (state['additional_doses_vax_pct'])
         return pct;
     })
+    .attr("data-vaxhes", (d) => {
+        let name = d['properties'].STUSPS
+        let state = vaxHesitationData.find(state => state['state_code'] === name)
+        let vaxHesNumber = state['avg_estimated_strongly_hesitant']
+        return Math.floor(+vaxHesNumber * 100) + '%';
+     } )
+     .attr("data-onePlus", (d) => {
+        let name = d['properties'].STUSPS
+        let state = data.find(state => state['location'] === name)
+        let plus = (state['series_complete_5pluspop_pct'])
+        return plus;
+    })
+    .attr("data-twoPlus", (d) => {
+        let name = d['properties'].STUSPS
+        let state = data.find(state => state['location'] === name)
+        let plus = (state['series_complete_18pluspop'])
+        return plus;
+    })
+    .attr("data-threePlus", (d) => {
+        let name = d['properties'].STUSPS
+        let state = data.find(state => state['location'] === name)
+        let plus = (state['series_complete_65pluspop'])
+        return plus;
+    })
     .attr('class','state')
     .on('mouseover', function(x) {
         // that = this
         d3.select('#state-name').text(this.dataset.name)
         d3.select('#state-pct').text(`${this.dataset.pct}%`)
         d3.select('#state-addpct').text(`${this.dataset.addpct}%`)
+    })
+    .on('click', function(e) {
+        let donut = [];
+        donut.push(+(e.target.dataset.onePlus), +(e.target.dataset.twoPlus), +(e.target.dataset.threePlus))
+        counter++
+        const data22 = {
+            labels: [
+              '% of pop. older than 5 vaccinated',
+              '% of pop. older than 18 vaccinated',
+              '% of pop. older than 65 vaccinated'
+            ],
+            datasets: [{
+              label: 'My First Dataset',
+              data: donut,
+              backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+              ],
+              hoverOffset: 4
+            }]
+          };
+    
+          const config = {
+            type: 'pie',
+            data: data22,
+          };
+          const deleted = document.getElementById(`${counter - 1}`)
+          if (deleted) {
+          deleted.remove();
+          }
+          const canvasDiv = d3.select('.donuttt')
+          canvasDiv.append('canvas').attr('id', `${counter}`)
+          const mainCanvas = document.getElementById(`${counter}`)
+          const ctx = mainCanvas.getContext('2d')
+        new Chart(ctx, config)
+       
+        d3.select('#vax-hes').text(this.dataset.vaxhes)
+        console.log(donut, 'taylor swift')
     })
     .on('mouseout', () => {
         d3.select('#state-name').text('select a state')
@@ -96,19 +163,21 @@ let drawMap = () => {
 
 
 
+        
+        
+        
+        d3.json(stateBoundaryURL).then(
+            (data, error) => {
+                if(error) {
+                    console.log(error);
+                } else {
+                    stateBoundaries = data.features;
+                    drawMap();
+                }
+            }
+            )
+            
+            
 
-
-
-d3.json(stateBoundaryURL).then(
-    (data, error) => {
-        if(error) {
-            console.log(error);
-        } else {
-            stateBoundaries = data.features;
-            drawMap();
-        }
-    }
-    )
-    
 
 })
