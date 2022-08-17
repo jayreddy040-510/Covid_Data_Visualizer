@@ -10,7 +10,7 @@ modalContainer.on('click', function () {
 const stateBoundaryURL = 'https://raw.githubusercontent.com/loganpowell/census-geojson/master/GeoJSON/20m/2021/state.json'
 
 const svg = d3.select('#canvas')
-const projection = d3.geoAlbers().scale(1250).translate([500,300])
+const projection = d3.geoAlbers().scale(1220).translate([470,275])
 let stateBoundaries;
 let counter = 0;
 // let counter2 = 0;
@@ -148,7 +148,7 @@ let drawMap = () => {
               data: donut,
               backgroundColor: [
                 'tomato',
-                'rgb(54, 162, 235)',
+                'darkslateblue',
                 'rgb(255, 205, 86)'
               ],
               hoverOffset: 4

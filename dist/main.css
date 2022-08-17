@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:90vw;
+    width:75vw;
 }
 
 svg {
@@ -25,17 +25,27 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    size: 100px;
-    max-width: 40px;
+    size: 140px;
+    /* max-width: 40px; */
+    width: 100px;
+    height: 100%;
     font-family: 'Adamina';
 }
+
+.headings {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 50vh;
+}
+
 h1 {
     font-size: 50px;
 
 }
 
 .state:hover {
-fill-opacity: 35%;
+fill-opacity: 50%;
 cursor: pointer;
 position: relative;
 }
@@ -52,16 +62,10 @@ position: relative;
 } */
 
 #canvas, #canvas2 {
-    min-width: 1000px;
-    min-height: 600px;
+    min-width: 950px;
+    min-height: 700px;
 }
 
-.headings {
-    display: flex;
-    justify-content: space-around;
-    width: 100vw;
-    height: 50vh;
-}
 
 #banana {
     display: flex;
@@ -117,4 +121,34 @@ button {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
     padding: 8px, 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    min-width: 100vw;
+    min-height: 6vh;
+    background-color: rgb(159, 152, 152);
+    top: 0;
+}
+
+#github {
+font-size: 35px;
+cursor: pointer;
+color: navy
+}
+#linkedin {
+    font-size: 35px;
+    cursor: pointer;
+    color: navy
+    }
+#gmail {
+    font-size: 35px;
+    cursor: pointer;
+    color: navy
+    }    
+.space {
+    width: 20px;
 }
