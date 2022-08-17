@@ -1,5 +1,6 @@
-window.addEventListener('DOMContentLoaded', async () => {
-    
+document.addEventListener('DOMContentLoaded', async () => {
+const body = d3.select('body')
+// body.style('opacity', '20%')
 const stateBoundaryURL = 'https://raw.githubusercontent.com/loganpowell/census-geojson/master/GeoJSON/20m/2021/state.json'
 
 const svg = d3.select('#canvas')
@@ -55,10 +56,12 @@ let toolTip = d3.select('#banana')
     .style("padding", "5px")
     .style("width", "200px")
     .style("height","90px")
+    .style('position','absolute')
 
 function mouseOver(d) {
     toolTip.html(`State: ${d.dataset.name}<br><br>1st: ${d.dataset.pct}<br>2nd: ${d.dataset.addpct}`)
     toolTip.style("opacity", 1)
+    d.append(toolTip)
 }
 
 function mouseMove(d) {
@@ -181,16 +184,6 @@ let drawMap = () => {
         else if (pct <= fourthQuint && pct > thirdQuint) return '#8bbe1b'
         else if (pct > fourthQuint) return "green"
         })
-        // .append('div')
-        // .style('position', 'absolute')
-        // .style('text-align', 'center')
-        // .style('width', '180px')
-        // .style('height', '2.5em')
-        // .style('font', '1.5em sans-serif')
-        // .style('color', 'yellow')
-        // .style('background', 'darkslateblue')
-        // .style('border-radius', '8px')
-        // .style('border', 'solid 1px cyan')
 
 
 

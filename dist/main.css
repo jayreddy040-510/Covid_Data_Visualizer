@@ -7,6 +7,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
 }
 .tools {
     display: flex;
@@ -21,6 +24,7 @@ svg {
 #header {
     display: flex;
     size: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 }
 h1 {
@@ -56,26 +60,48 @@ position: relative;
     width: 100vw;
     height: 50vh;
 }
-/* #banana {
-    position: absolute;
+
+#banana {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal-container{
+    /* display: none; */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* pointer-events: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background-color: floralwhite;
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px, 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     text-align: center;
-    width: 180px;
-    height: 2.5em;
-    font: 1.5em sans-serif;
-    color: yellow;
-    background: darkslateblue;
-    border-radius: 8px;
-    border: solid 1px darkslategray;
-    opacity: 0; */
-/* 
-} */
-/* div.style("class", "tooltip")
-div.attr('position', 'absolute')
-div.attr('text-align', 'center')
-div.attr('width', '180px')
-div.attr('height', '2.5em')
-div.attr('font', '1.5em sans-serif')
-div.attr('color', 'yellow')
-div.attr('background', 'darkslateblue')
-div.attr('border-radius', '8px')
-div.attr('border', 'solid 1px cyan') */
+    text-decoration: solid;
+}
+
+button {
+    /* border: 0; */
+    background-color: rgb(222, 214, 214);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    padding: 8px, 20px;
+}
