@@ -1,13 +1,12 @@
 window.addEventListener('DOMContentLoaded', async () => {
     
-
-
 const stateBoundaryURL = 'https://raw.githubusercontent.com/loganpowell/census-geojson/master/GeoJSON/20m/2021/state.json'
 
 const svg = d3.select('#canvas')
 const projection = d3.geoAlbers().scale(1250).translate([500,300])
 let stateBoundaries;
 let counter = 0;
+// let counter2 = 0;
 
 
 const strongHesitant = async () => {
@@ -45,6 +44,29 @@ const secondQuint = firstQuint + quintile;
 const thirdQuint = secondQuint + quintile;
 const fourthQuint = thirdQuint + quintile;
 
+let toolTip = d3.select('#banana')
+    .append('div')
+    .attr("class", "tooltip")
+    .style("opacity", 0)
+    .style("background-color", "floralwhite")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+    .style("width", "200px")
+    .style("height","90px")
+
+function mouseOver(d) {
+    toolTip.html(`State: ${d.dataset.name}<br><br>1st: ${d.dataset.pct}<br>2nd: ${d.dataset.addpct}`)
+    toolTip.style("opacity", 1)
+}
+
+function mouseMove(d) {
+}
+
+function mouseLeave(d) {
+    toolTip.style('opacity', 0)
+}
 
 // console.log(data.find(x => x['location'] === 'WY').series_complete_pop_pct)
 console.log(data);
@@ -56,6 +78,7 @@ let drawMap = () => {
     .attr('d', d3.geoPath().projection(projection))
     .attr('stroke-width', '1.5')
     .attr('stroke','black')
+    .attr('position', 'relative')
     .attr('data-name', d => d['properties'].NAME)
     .attr("data-pct", (d) => {
         let name = d['properties'].STUSPS
@@ -73,7 +96,7 @@ let drawMap = () => {
         let name = d['properties'].STUSPS
         let state = vaxHesitationData.find(state => state['state_code'] === name)
         let vaxHesNumber = state['avg_estimated_strongly_hesitant']
-        return Math.floor(+vaxHesNumber * 100) + '%';
+        return Math.round(+vaxHesNumber * 100) + '%';
      } )
      .attr("data-onePlus", (d) => {
         let name = d['properties'].STUSPS
@@ -94,8 +117,9 @@ let drawMap = () => {
         return plus;
     })
     .attr('class','state')
-    .on('mouseover', function(x) {
-        // that = this
+    .on('mouseover', function(d) {
+        d = this;
+        mouseOver(d);
         d3.select('#state-name').text(this.dataset.name)
         d3.select('#state-pct').text(`${Math.round(this.dataset.pct)}%`)
         d3.select('#state-addpct').text(`${Math.round(this.dataset.addpct)}%`)
@@ -139,7 +163,8 @@ let drawMap = () => {
         d3.select('#vax-hes').text(this.dataset.vaxhes)
         console.log(donut, 'taylor swift')
     })
-    .on('mouseout', () => {
+    .on('mouseleave', () => {
+        mouseLeave();
         d3.select('#state-name').text('select a state')
     })
     .attr('fill', (stateObj) => {
@@ -153,9 +178,22 @@ let drawMap = () => {
         if (pct <= firstQuint) return 'firebrick'
         else if (pct <= secondQuint && pct > firstQuint) return 'orange'
         else if (pct <= thirdQuint && pct > secondQuint) return '#ffdb58'
-        else if (pct <= fourthQuint && pct > thirdQuint) return '#76ff7a'
+        else if (pct <= fourthQuint && pct > thirdQuint) return '#8bbe1b'
         else if (pct > fourthQuint) return "green"
         })
+        // .append('div')
+        // .style('position', 'absolute')
+        // .style('text-align', 'center')
+        // .style('width', '180px')
+        // .style('height', '2.5em')
+        // .style('font', '1.5em sans-serif')
+        // .style('color', 'yellow')
+        // .style('background', 'darkslateblue')
+        // .style('border-radius', '8px')
+        // .style('border', 'solid 1px cyan')
+
+
+
 
 
             
@@ -178,6 +216,7 @@ let drawMap = () => {
             )
             
             
+
 
 
 })

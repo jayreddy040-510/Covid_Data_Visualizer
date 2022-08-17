@@ -8,9 +8,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+.tools {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100vw;
+}
 
 svg {
-    background-color: floralwhite;
+    background-color: white;
 }
 #header {
     display: flex;
@@ -23,7 +29,7 @@ h1 {
 }
 
 .state:hover {
-fill-opacity: 50%;
+fill-opacity: 35%;
 cursor: pointer;
 position: relative;
 }
@@ -47,6 +53,29 @@ position: relative;
 .headings {
     display: flex;
     justify-content: space-around;
-    flex-direction: row;
+    width: 100vw;
+    height: 50vh;
 }
-
+/* #banana {
+    position: absolute;
+    text-align: center;
+    width: 180px;
+    height: 2.5em;
+    font: 1.5em sans-serif;
+    color: yellow;
+    background: darkslateblue;
+    border-radius: 8px;
+    border: solid 1px darkslategray;
+    opacity: 0; */
+/* 
+} */
+/* div.style("class", "tooltip")
+div.attr('position', 'absolute')
+div.attr('text-align', 'center')
+div.attr('width', '180px')
+div.attr('height', '2.5em')
+div.attr('font', '1.5em sans-serif')
+div.attr('color', 'yellow')
+div.attr('background', 'darkslateblue')
+div.attr('border-radius', '8px')
+div.attr('border', 'solid 1px cyan') */
