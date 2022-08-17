@@ -23,7 +23,7 @@ h1 {
 }
 
 .state:hover {
-fill: darkslateblue;
+fill-opacity: 50%;
 cursor: pointer;
 position: relative;
 }
@@ -40,7 +40,7 @@ position: relative;
 } */
 
 #canvas, #canvas2 {
-    min-width: 1200px;
+    min-width: 1000px;
     min-height: 600px;
 }
 

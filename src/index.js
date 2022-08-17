@@ -97,8 +97,8 @@ let drawMap = () => {
     .on('mouseover', function(x) {
         // that = this
         d3.select('#state-name').text(this.dataset.name)
-        d3.select('#state-pct').text(`${this.dataset.pct}%`)
-        d3.select('#state-addpct').text(`${this.dataset.addpct}%`)
+        d3.select('#state-pct').text(`${Math.round(this.dataset.pct)}%`)
+        d3.select('#state-addpct').text(`${Math.round(this.dataset.addpct)}%`)
     })
     .on('click', function(e) {
         let donut = [];
@@ -111,10 +111,10 @@ let drawMap = () => {
               '% of pop. older than 65 vaccinated'
             ],
             datasets: [{
-              label: 'My First Dataset',
+              label: 'Vaccination by Age Demographic',
               data: donut,
               backgroundColor: [
-                'rgb(255, 99, 132)',
+                'tomato',
                 'rgb(54, 162, 235)',
                 'rgb(255, 205, 86)'
               ],
@@ -123,7 +123,7 @@ let drawMap = () => {
           };
     
           const config = {
-            type: 'pie',
+            type: 'bar',
             data: data22,
           };
           const deleted = document.getElementById(`${counter - 1}`)
@@ -151,10 +151,10 @@ let drawMap = () => {
         pct = (state['series_complete_pop_pct'])
         
         if (pct <= firstQuint) return 'firebrick'
-        else if (pct <= secondQuint && pct > firstQuint) return '#fc4e2a'
-        else if (pct <= thirdQuint && pct > secondQuint) return '#feb24c'
-        else if (pct <= fourthQuint && pct > thirdQuint) return '#fed976'
-        else if (pct > fourthQuint) return "#ffffb2"
+        else if (pct <= secondQuint && pct > firstQuint) return 'orange'
+        else if (pct <= thirdQuint && pct > secondQuint) return '#ffdb58'
+        else if (pct <= fourthQuint && pct > thirdQuint) return '#76ff7a'
+        else if (pct > fourthQuint) return "green"
         })
 
 
