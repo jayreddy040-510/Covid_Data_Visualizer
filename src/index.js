@@ -10,7 +10,7 @@ modalContainer.on('click', function () {
 const stateBoundaryURL = 'https://raw.githubusercontent.com/loganpowell/census-geojson/master/GeoJSON/20m/2021/state.json'
 
 const svg = d3.select('#canvas')
-const projection = d3.geoAlbers().scale(1220).translate([470,275])
+const projection = d3.geoAlbers().scale(1150).translate([470,310])
 let stateBoundaries;
 let counter = 0;
 // let counter2 = 0;
@@ -55,14 +55,15 @@ let toolTip = d3.select('#banana')
     .append('div')
     .attr("class", "tooltip")
     .style("opacity", 0)
-    .style("background-color", "#fdf5e6")
+    .style("background-color", "#faebd7")
     .style("border", "solid")
-    .style("border-width", "2px")
+    .style("border-width", "1.5px")
     .style("border-radius", "5px")
     .style("padding", "5px")
-    .style("width", "250px")
-    .style("height","110px")
-    .style('position','absolute')
+    .style("width", "260px")
+    .style("height","100%")
+    .style('margin-top','10px')
+    // .style('position','absolute')
 
 function mouseOver(d) {
     toolTip.html(`<br>State: ${d.dataset.name}<br><br>Percent Vaccinated: ${d.dataset.pct}<br>Percent Vaccinated w/ Booster: ${d.dataset.addpct}`)
@@ -134,23 +135,24 @@ let drawMap = () => {
         d3.select('#state-addpct').text(`${Math.round(this.dataset.addpct)}%`)
     })
     .on('click', function(e) {
+
         let donut = [];
         donut.push(+(e.target.dataset.onePlus), +(e.target.dataset.twoPlus), +(e.target.dataset.threePlus))
         counter++
+        d3.select('.tools').style('opacity', 1)
         const data22 = {
             labels: [
-              '% of pop. older than 5 vaccinated',
-              '% of pop. older than 18 vaccinated',
-              '% of pop. older than 65 vaccinated'
+              '5',
+              '18',
+              '65'
             ],
             datasets: [{
-              label: 'Vaccination by Age Demographic',
+              label: 'Percent of population vaccinated at the following age or older',
               data: donut,
-              backgroundColor: [
-                'tomato',
-                'darkslateblue',
-                'rgb(255, 205, 86)'
-              ],
+              backgroundColor: 'darkslateblue',
+              barPercentage: 0.4,
+              borderColor: 'grey',
+              hoverBackgroundColor: ['rgb(105, 98, 152)'],
               hoverOffset: 4
             }]
           };
@@ -158,6 +160,35 @@ let drawMap = () => {
           const config = {
             type: 'bar',
             data: data22,
+            options: {
+                plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    position: 'top',
+                    padding: 20,
+                    color: 'black',
+                    display: true,
+                    text: "Percent of Population Vaccinated at the Following Age or Older",
+                },
+                tooltip: {
+                    // position: 'nearest',
+                    backgroundColor: '#faebd7',
+                    titleColor: '#faebd7',
+                    footerColor: '#faebd7',
+                    titleFont: {size: 0},
+                    borderColor: 'rgb(0,0,0)',
+                    borderWidth: 1,
+                    displayColors: false,
+                    font: {
+                        family: "'Times New Roman'"
+                    },
+                    bodyColor: 'rgb(0,0,0)',
+                    padding: 10
+                }
+             }
+            }
           };
           const deleted = document.getElementById(`${counter - 1}`)
           if (deleted) {
@@ -169,12 +200,11 @@ let drawMap = () => {
           const ctx = mainCanvas.getContext('2d')
         new Chart(ctx, config)
        
-        d3.select('#vax-hes').text(this.dataset.vaxhes)
-        console.log(donut, 'taylor swift')
+        d3.select('#vax-hes').text(`${this.dataset.vaxhes}`)
+        // console.log(donut, 'taylor swift')
     })
     .on('mouseleave', () => {
-        mouseLeave();
-        d3.select('#state-name').text('select a state')
+        // mouseLeave();
     })
     .attr('fill', (stateObj) => {
         
