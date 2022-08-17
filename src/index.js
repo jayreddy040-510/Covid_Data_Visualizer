@@ -60,8 +60,8 @@ let toolTip = d3.select('#banana')
     .style("border-width", "2px")
     .style("border-radius", "5px")
     .style("padding", "5px")
-    .style("width", "200px")
-    .style("height","90px")
+    .style("width", "250px")
+    .style("height","110px")
     .style('position','absolute')
 
 function mouseOver(d) {

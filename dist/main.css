@@ -13,9 +13,9 @@ body {
 }
 .tools {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width:100vw;
+    width:90vw;
 }
 
 svg {
@@ -23,7 +23,10 @@ svg {
 }
 #header {
     display: flex;
-    size: 120px;
+    align-items: center;
+    justify-content: center;
+    size: 100px;
+    max-width: 40px;
     font-family: 'Adamina';
 }
 h1 {
@@ -80,6 +83,7 @@ position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: opacity 0.2s ease;
 }
 
 .modal {
