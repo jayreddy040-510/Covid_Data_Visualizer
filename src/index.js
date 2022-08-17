@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
 const body = d3.select('body')
-// body.style('opacity', '20%')
+body.style('cursor','pointer')
+const modalContainer = d3.select('.modal-container')
+modalContainer.on('click', function () {
+    body.style('cursor', 'auto')
+    modalContainer.style('opacity', '0')
+    modalContainer.style('pointer-events', 'none')
+})
 const stateBoundaryURL = 'https://raw.githubusercontent.com/loganpowell/census-geojson/master/GeoJSON/20m/2021/state.json'
 
 const svg = d3.select('#canvas')
