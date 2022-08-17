@@ -55,7 +55,7 @@ let toolTip = d3.select('#banana')
     .append('div')
     .attr("class", "tooltip")
     .style("opacity", 0)
-    .style("background-color", "floralwhite")
+    .style("background-color", "#fdf5e6")
     .style("border", "solid")
     .style("border-width", "2px")
     .style("border-radius", "5px")
@@ -65,7 +65,7 @@ let toolTip = d3.select('#banana')
     .style('position','absolute')
 
 function mouseOver(d) {
-    toolTip.html(`State: ${d.dataset.name}<br><br>1st: ${d.dataset.pct}<br>2nd: ${d.dataset.addpct}`)
+    toolTip.html(`<br>State: ${d.dataset.name}<br><br>Percent Vaccinated: ${d.dataset.pct}<br>Percent Vaccinated w/ Booster: ${d.dataset.addpct}`)
     toolTip.style("opacity", 1)
     d.append(toolTip)
 }
@@ -164,7 +164,7 @@ let drawMap = () => {
           deleted.remove();
           }
           const canvasDiv = d3.select('.donuttt')
-          canvasDiv.append('canvas').attr('id', `${counter}`)
+          canvasDiv.append('canvas').attr('id', `${counter}`).attr('max-width', '50px')
           const mainCanvas = document.getElementById(`${counter}`)
           const ctx = mainCanvas.getContext('2d')
         new Chart(ctx, config)

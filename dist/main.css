@@ -10,16 +10,18 @@ body {
     min-height: 100vh;
     min-width: 100vw;
     margin: 0;
+    background-color: floralwhite;
 }
 .tools {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width:75vw;
 }
 
 svg {
-    background-color: white;
+    background-color: floralwhite;
+
 }
 #header {
     display: flex;
@@ -66,6 +68,10 @@ position: relative;
     min-height: 700px;
 }
 
+canvas {
+    background-color: floralwhite;
+}
+
 
 #banana {
     display: flex;
@@ -91,7 +97,7 @@ position: relative;
 }
 
 .modal {
-    background-color: floralwhite;
+    background-color: #fff5ee;
     width: 700px;
     max-width: 100%;
     display: flex;
@@ -107,7 +113,7 @@ position: relative;
 }
 
 .modal h1 {
-    /* margin: 0; */
+    font-family: 'Times New Roman Bold', Times, serif;
 }
 
 .modal p {
@@ -130,25 +136,33 @@ button {
     position: absolute;
     min-width: 100vw;
     min-height: 6vh;
-    background-color: rgb(159, 152, 152);
+    background-color: rgb(175, 172, 172);
     top: 0;
 }
 
 #github {
 font-size: 35px;
 cursor: pointer;
-color: navy
+color: #0047ab
 }
 #linkedin {
     font-size: 35px;
     cursor: pointer;
-    color: navy
+    color: #0047ab
     }
 #gmail {
     font-size: 35px;
     cursor: pointer;
-    color: navy
+    color: #0047ab
     }    
 .space {
     width: 20px;
+}
+
+.legend {
+    display: flex;
+    min-width: 65vw;
+    background-color: black;
+    min-height: 2px;
+    border-radius: 10px;
 }
