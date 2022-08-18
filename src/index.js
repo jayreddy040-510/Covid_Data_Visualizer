@@ -182,7 +182,7 @@ let drawMap = () => {
         d3.select('#state-addpct').text(`${Math.round(this.dataset.addpct)}%`)
     })
     .on('click', function(e) {
-
+        console.log(e.target.dataset.pct)
         let donut = [];
         donut.push(+(e.target.dataset.onePlus), +(e.target.dataset.twoPlus), +(e.target.dataset.threePlus))
         counter++
@@ -197,10 +197,26 @@ let drawMap = () => {
             datasets: [{
             //   label: 'Percent of population vaccinated at the following age or older',
               data: donut,
-              backgroundColor: '#324ab2',
+              backgroundColor: () => {
+                let pct = e.target.dataset.pct;
+
+                if (pct <= firstQuint) return 'firebrick'
+              else if (pct <= secondQuint && pct > firstQuint) return 'orange'
+              else if (pct <= thirdQuint && pct > secondQuint) return '#ffe75e'
+              else if (pct <= fourthQuint && pct > thirdQuint) return '#8bbe1b'
+              else if (pct > fourthQuint) return "#195905"
+              },
               barPercentage: 0.4,
               borderColor: 'grey',
-              hoverBackgroundColor: '#6f83dd',
+              hoverBackgroundColor: () => {
+                let pct = e.target.dataset.pct;
+
+                if (pct <= firstQuint) return 'rgb(232, 98, 98)';
+              else if (pct <= secondQuint && pct > firstQuint) return 'rgb(255, 209, 123)';
+              else if (pct <= thirdQuint && pct > secondQuint) return '#fef2ae'
+              else if (pct <= fourthQuint && pct > thirdQuint) return '#cae296'
+              else if (pct > fourthQuint) return "#638958"
+              },
               hoverOffset: 4
             }]
           };
@@ -218,8 +234,8 @@ let drawMap = () => {
                     padding: 30,
                     color: 'rgb(40,40,40)',
                     display: true,
-                    text: "Percent of Population Vaccinated by >= Age",
-                    font: {family: "'Roboto'", size: 18, weight: 400}
+                    text: "Percent of State Population Vaccinated by >= Age",
+                    font: {family: "'Roboto'", size: 18, weight: 375}
                 },
                 tooltip: {
                     // position: 'nearest',

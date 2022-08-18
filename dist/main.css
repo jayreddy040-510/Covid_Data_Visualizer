@@ -16,9 +16,9 @@ body {
     background-color: transparent;
     opacity: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width:95rem;
+    width:100rem;
     z-index: 4;
     align-self: center;
     margin-top: 2rem;
@@ -204,24 +204,24 @@ button {
 #github {
 font-size: 35px;
 cursor: pointer;
-color: #324ab2
+color: darkslategrey
 }
 #linkedin {
     font-size: 35px;
     cursor: pointer;
-    color: #324ab2
+    color: darkslategrey
     }
 #gmail {
     font-size: 35px;
     cursor: pointer;
-    color: #324ab2
+    color: darkslategrey
     }    
 .space {
     width: 20px;
 }
 
 #gmail:hover, #linkedin:hover, #github:hover {
-    color: #6f83dd;
+    color: rgb(70, 123, 123);
     transform:scale(1.1);
     transition: ease;
 }
@@ -240,7 +240,7 @@ color: #324ab2
     justify-content: center;
     align-items: center;
     margin: 0;
-    width: 20%
+    /* width: 20% */
 }
 
 #vax-hes{
@@ -357,6 +357,32 @@ font-family: 'Roboto Light';
     align-self: center;
     height: 1rem;
 }
+
+.credits {
+    display: flex;
+    opacity: 0.6;
+    flex-direction: column;
+    justify-content: center;
+    /* height: 100%;
+    width: 15rem; */
+    background-color: transparent;
+}
+
+.credits:hover {
+    opacity: 1.0;
+}
+
+#credits-title {
+    font-size: 35px;
+    /* opacity: 0.6; */
+    color: rgb(40,40,40);
+    font-family: 'Roboto Medium';
+}
+
+#extra-div {
+    font-family: 'Roboto Light'
+}
+
 
 blah {
     color: #6f83dd
