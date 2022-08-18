@@ -296,7 +296,7 @@ color: darkslategrey
 #vax-hes{
     font-size: 55px;
     margin: 0;
-    font-family: 'Adamina';
+    font-family: 'Roboto Light';
     
 }
 
@@ -414,9 +414,9 @@ font-family: 'Roboto Light';
     display: flex;
     /* opacity: 0.6; */
     flex-direction: column;
-    justify-content: center;
-    /* height: 100%;
-    width: 15rem; */
+    justify-content: space-evenly;
+    height: 75%;
+    /* width: 15rem; */
     background-color: transparent;
 }
 

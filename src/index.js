@@ -111,12 +111,18 @@ let toolTip = d3.select('#banana')
     // .style('position','absolute')
 let mainPct = d3.select('#main-pct')
 let addPct = d3.select('#boost-pct')
+let vaxHes = d3.select('#vax-hes')
+let vaxHesP = d3.select('#vaxhes-p')
 function mouseOver(d) {
     toolTip.html(`${d.dataset.name}`)
     mainPct.style('opacity', 0.4)
     addPct.style('opacity', 0.4)
     mainPct.html(`${Math.round(d.dataset.pct)}% Pop. Vaccinated`)
     addPct.html(`${Math.round(d.dataset.addpct)}% Pop. Boosted`)
+    d3.select('#vax-hes').text(`${d.dataset.vaxhes}`)
+        d3.select('#vaxhes-p').text(`of adults from ${d.dataset.name} say they will "definitely not" receive a COVID vaccine, based on a 2021 national survey`)
+    vaxHes.style('opacity', 0.6)
+    vaxHesP.style('opacity', 0.6)
     // <br><br>Percent Vaccinated: ${d.dataset.pct}<br>Percent Vaccinated w/ Booster: ${d.dataset.addpct}`)
     toolTip.style("opacity", 0.6).style("font-family", "Adamina").style("font-size", "40px").style('color', 'rgb(40,40,40)')
     .style('width', '10%')
@@ -197,6 +203,8 @@ let drawMap = () => {
         toolTip.style('opacity', 1)
         mainPct.style('opacity', 1)
         addPct.style('opacity', 1)
+        d3.select('#vax-hes').style('opacity', 1.0)
+        d3.select('#vaxhes-p').style('opacity', 1.0)
         const data22 = {
             labels: [
               '5',
@@ -274,8 +282,7 @@ let drawMap = () => {
           const ctx = mainCanvas.getContext('2d')
         new Chart(ctx, config)
        
-        d3.select('#vax-hes').text(`${this.dataset.vaxhes}`)
-        d3.select('#vaxhes-p').text(`of adults from ${this.dataset.name} say they will "definitely not" receive a COVID vaccine, based on a 2021 national survey`)
+        
         // console.log(donut, 'taylor swift')
     })
     .on('mouseleave', () => {
