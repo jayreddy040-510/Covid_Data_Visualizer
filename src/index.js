@@ -205,6 +205,8 @@ let drawMap = () => {
         addPct.style('opacity', 1)
         d3.select('#vax-hes').style('opacity', 1.0)
         d3.select('#vaxhes-p').style('opacity', 1.0)
+        let xyz = e.target.dataset.name
+
         const data22 = {
             labels: [
               '5',
@@ -251,7 +253,7 @@ let drawMap = () => {
                     padding: 30,
                     color: 'rgb(40,40,40)',
                     display: true,
-                    text: "Percent of State Population Vaccinated by >= Age",
+                    text: `Percent of ${xyz} Population Vaccinated by >= Age`,
                     font: {family: "'Roboto'", size: 18, weight: 375}
                 },
                 tooltip: {
