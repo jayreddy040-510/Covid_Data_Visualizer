@@ -201,8 +201,7 @@ canvas {
 
 .modal {
     background-color: floralwhite;
-    width: 700px;
-    max-width: 100%;
+    width: 60rem;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -221,7 +220,7 @@ canvas {
 }
 
 .modal p {
-    font-size: 14px;
+    font-size: 18px;
     font-family: 'Adamina';
     opacity: 0.8;
     color: rgb(40,40,40);

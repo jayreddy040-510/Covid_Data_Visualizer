@@ -189,7 +189,7 @@ let drawMap = () => {
         d3.select('#state-addpct').text(`${Math.round(this.dataset.addpct)}%`)
     })
     .on('click', function(e) {
-        console.log(e.target.dataset.pct)
+
         let donut = [];
         donut.push(+(e.target.dataset.onePlus), +(e.target.dataset.twoPlus), +(e.target.dataset.threePlus))
         counter++
