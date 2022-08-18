@@ -133,13 +133,49 @@ canvas {
 }
 
 
-#banana {
+#tooltip-div {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 100%;
-    /* width: 30%; */
+    flex-direction: column;
+    width: 18%;
 }
+
+#banana {
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+    height: 40%;
+    min-width: 100%;
+}
+
+#main-pct {
+    opacity: 0.6;
+    font-family: 'Adamina';
+    font-size: 25px;
+    color: rgb(40,40,40);
+    width: 100%;
+    height: 25%
+}
+
+#boost-pct {
+    opacity: 0.6;
+    font-family: 'Adamina';
+    font-size: 25px;
+    color: rgb(40,40,40);
+    width: 100%;
+    height: 25%
+}
+
+#pcts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+/* toolTip.style("opacity", 0.6).style("font-family", "Adamina").style("font-size", "40px").style('color', 'rgb(40,40,40)')
+.style('width', '10%') */
 
 .donuttt {
     background-color: transparent;
@@ -283,12 +319,12 @@ color: darkslategrey
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    width: 10rem;
+    width: 13rem;
     height: 100%;
 }
 #legend-main {
     display: flex;
-    width: 10rem;
+    width: 12rem;
     background-color: transparent;
     height: 1.5rem;
     border: solid;
@@ -299,7 +335,7 @@ color: darkslategrey
 #legend-main2 {
     display: flex;
     justify-content: space-between;
-    width: 10rem;
+    width: 12rem;
     background-color: transparent;
     height: 1.5rem;
 }
@@ -367,10 +403,12 @@ font-family: 'Roboto Light';
 #pleg-1 {
     font-family: 'Adamina';
     color: rgb(40, 40, 40);
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     align-self: center;
-    height: 1rem;
+    justify-self: center;
+    height: 2rem;
+    margin-right: 1rem;
 }
 
 .credits {
@@ -412,7 +450,7 @@ font-family: 'Roboto Light';
     color: rgb(40,40,40);
     font-family: 'Roboto Medium';
     opacity: 0.8;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 }
 
 #extra-div {

@@ -109,13 +109,20 @@ let toolTip = d3.select('#banana')
     // .style("height","90%")
     // .style('margin-top','10px')
     // .style('position','absolute')
-
+let mainPct = d3.select('#main-pct')
+let addPct = d3.select('#boost-pct')
 function mouseOver(d) {
     toolTip.html(`${d.dataset.name}`)
+    mainPct.style('opacity', 0.4)
+    addPct.style('opacity', 0.4)
+    mainPct.html(`${Math.round(d.dataset.pct)}% Pop. Vaccinated`)
+    addPct.html(`${Math.round(d.dataset.addpct)}% Pop. Boosted`)
     // <br><br>Percent Vaccinated: ${d.dataset.pct}<br>Percent Vaccinated w/ Booster: ${d.dataset.addpct}`)
     toolTip.style("opacity", 0.6).style("font-family", "Adamina").style("font-size", "40px").style('color', 'rgb(40,40,40)')
     .style('width', '10%')
     d.append(toolTip)
+    d.append(mainPct)
+    d.append(addPct)
 }
 
 function mouseMove(d) {
@@ -188,6 +195,8 @@ let drawMap = () => {
         counter++
         d3.select('.tools').style('opacity', 1)
         toolTip.style('opacity', 1)
+        mainPct.style('opacity', 1)
+        addPct.style('opacity', 1)
         const data22 = {
             labels: [
               '5',
