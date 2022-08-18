@@ -126,9 +126,9 @@ function mouseLeave(d) {
 }
 
 // console.log(data.find(x => x['location'] === 'WY').series_complete_pop_pct)
-console.log(data);
+
 let drawMap = () => {
-    console.log(stateBoundaries)
+
     svg.selectAll("path")
     .data(stateBoundaries)
     .enter().append('path')

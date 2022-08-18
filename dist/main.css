@@ -64,7 +64,7 @@ svg {
     align-items: center;
     min-width: 100vw;
     min-height: 5vh;
-    background-color: #deb887;
+    background-color: #f5deb3;
     top: 0px;
 }
 
@@ -385,24 +385,35 @@ font-family: 'Roboto Light';
 
 #credits-title:hover, #cdc:hover, #diego:hover, #tianshu:hover {
     opacity: 1.0;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-#don {
+
+#don:hover {
     color: firebrick;
+}
+
+#tian:hover {
+    color: cornflowerblue;
+}
+
+#cdc-data:hover {
+    color: #006400;
 }
 
 #credits-title {
     opacity: 0.8;
+    margin-left: 1rem;
 }
 
 #cdc, #diego, #tianshu {
     opacity: 0.6;
+    font-size: 22px;
 }
 
 #credits-title {
     font-size: 35px;
-    /* opacity: 0.6; */
+    opacity: 0.6;
     color: rgb(40,40,40);
     font-family: 'Roboto Medium';
 }
@@ -414,4 +425,33 @@ font-family: 'Roboto Light';
 
 blah {
     color: #6f83dd
+}
+
+
+#credits-title:hover + #extra-div > #cdc > #cdc-data{
+    color: #006400;
+}
+
+
+
+#credits-title:hover + #extra-div > #diego > #don {
+    color: firebrick;
+}
+
+#credits-title:hover + #extra-div > #tianshu > #tian {
+    color: cornflowerblue
+}
+
+#cdc:hover > #cdc-data{
+    color: #006400;
+}
+
+
+
+#diego:hover > #don {
+    color: firebrick;
+}
+
+#tianshu:hover > #tian {
+    color: cornflowerblue
 }
