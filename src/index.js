@@ -168,7 +168,7 @@ let drawMap = () => {
                 title: {
                     position: 'top',
                     padding: 20,
-                    color: 'black',
+                    color: 'rgb(40,40,40)',
                     display: true,
                     text: "Percent of Population Vaccinated at the Following Age or Older",
                 },
@@ -201,6 +201,7 @@ let drawMap = () => {
         new Chart(ctx, config)
        
         d3.select('#vax-hes').text(`${this.dataset.vaxhes}`)
+        d3.select('#vaxhes-p').text(`of adults from ${this.dataset.name} say they will "definitely not" receive a COVID vaccine, based on a 2021 national survey`)
         // console.log(donut, 'taylor swift')
     })
     .on('mouseleave', () => {
@@ -216,7 +217,7 @@ let drawMap = () => {
         
         if (pct <= firstQuint) return 'firebrick'
         else if (pct <= secondQuint && pct > firstQuint) return 'orange'
-        else if (pct <= thirdQuint && pct > secondQuint) return '#ffdb58'
+        else if (pct <= thirdQuint && pct > secondQuint) return '#ffe75e'
         else if (pct <= fourthQuint && pct > thirdQuint) return '#8bbe1b'
         else if (pct > fourthQuint) return "green"
         })

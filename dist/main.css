@@ -29,8 +29,14 @@ svg {
     z-index: 3;
     height: 50%;
 }
+
+.space-taker {
+    display: flex;
+    width: 45%;
+}
 #header {
     z-index: 4;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,7 +44,17 @@ svg {
     /* max-width: 40px; */
     width: 100px;
     height: 100%;
-    font-family: 'Adamina';
+    font-family: 'Roboto Light';
+    margin-right: 4rem;
+}
+
+#strong {
+    font-size: 65px;
+    color: rgb(40,40,40);
+}
+
+#weak {
+    font-family: 'Roboto Thin';
 }
 
 .nav {
@@ -48,14 +64,14 @@ svg {
     align-items: center;
     min-width: 100vw;
     min-height: 5vh;
-    background-color: rgb(175, 172, 172);
+    background-color: rgb(160, 158, 158);
     top: 0px;
 }
 
 .headings {
     display: flex;
-    justify-content: space-evenly;
-    width: 100vw;
+    justify-content: center;
+    width: 120rem;
     height: 60vh;
     top: 0px;
 }
@@ -64,7 +80,7 @@ svg {
     z-index: 4;
     display: flex;
     width: 70rem;
-    background-color: black;
+    background-color: rgb(40,40,40);
     min-height: 2px;
     border-radius: 10px;
     margin-top: 3rem;
@@ -90,7 +106,8 @@ svg {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 45px;
+    color: rgb(40, 40, 40);
 
 }
 
@@ -147,13 +164,13 @@ canvas {
 }
 
 .modal {
-    background-color: #fffefe;
+    background-color: floralwhite;
     width: 700px;
     max-width: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 30px, 50px;
     border-radius: 5px;
@@ -163,12 +180,15 @@ canvas {
 }
 
 .modal h1 {
-    font-family: 'Times New Roman Bold', Times, serif;
+    font-family: 'Adamina';
+    color: rgb(40,40,40);
 }
 
 .modal p {
     font-size: 14px;
+    font-family: 'Adamina';
     opacity: 0.8;
+    color: rgb(40,40,40);
 }
 
 button {
@@ -201,7 +221,9 @@ color: darkslateblue
 }
 
 #gmail:hover, #linkedin:hover, #github:hover {
-    color: rgb(110, 103, 156)
+    color: rgb(110, 103, 156);
+    transform:scale(1.1);
+    transition: ease;
 }
 
 #vaxhes-p {
@@ -209,6 +231,7 @@ color: darkslateblue
     opacity: 0.8;
     font-size: 14;
     text-align: center;
+    margin: 0;
 }
 
 #vaxhes-div {
@@ -221,11 +244,19 @@ color: darkslateblue
 }
 
 #vax-hes{
-    font-size: 45px;
+    font-size: 55px;
     margin: 0;
+    font-family: 'Adamina';
     
 }
 
+#legend-main {
+    display: flex;
+    width: 10rem;
+    background-color: black;
+    height: 1.5rem;
+}
+
 blah {
-    color: rgb(0, 0, 0)
+    color: #ffe75e
 }
