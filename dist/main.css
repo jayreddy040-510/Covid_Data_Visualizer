@@ -401,10 +401,6 @@ font-family: 'Roboto Light';
     color: #006400;
 }
 
-#credits-title {
-    opacity: 0.8;
-    margin-left: 1rem;
-}
 
 #cdc, #diego, #tianshu {
     opacity: 0.6;
@@ -413,9 +409,10 @@ font-family: 'Roboto Light';
 
 #credits-title {
     font-size: 35px;
-    opacity: 0.6;
     color: rgb(40,40,40);
     font-family: 'Roboto Medium';
+    opacity: 0.8;
+    margin-left: 1rem;
 }
 
 #extra-div {
@@ -446,6 +443,17 @@ blah {
     color: #006400;
 }
 
+#credits-title:hover + #extra-div > #diego {
+    opacity: 1.0;
+}
+
+#credits-title:hover + #extra-div > #tianshu {
+    opacity: 1.0;
+}
+
+#credits-title:hover + #extra-div > #cdc {
+    opacity: 1.0;
+}
 
 
 #diego:hover > #don {
