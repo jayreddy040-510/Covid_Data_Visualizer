@@ -143,7 +143,7 @@ canvas {
 
 .donuttt {
     background-color: transparent;
-    height: 10rem;
+    /* /* height: 10rem; */
     width: 26rem;
 }
 
@@ -251,8 +251,16 @@ color: #324ab2
 }
 
 #legend-title {
-    font-family: 'Adamina';
+    font-family: 'Roboto';
     color: rgb(40,40,40);
+}
+
+#map-legend-title {
+    font-family: 'Roboto Medium';
+}
+
+#map-legend-non-title {
+    font-family: 'Roboto Light';
 }
 
 #legend-main-parent {
@@ -284,7 +292,14 @@ color: #324ab2
 #legend-main2 div {
     font-size: 14px;
     color: rgb(40, 40, 40);
-    font-family: 'Adamina';
+}
+
+.leg-less {
+font-family: 'Roboto Light';
+}
+
+.leg-more {
+    font-family: 'Roboto Medium';
 }
 
 #legend-main div {

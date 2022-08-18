@@ -97,22 +97,24 @@ d3.select('.leg5').on('mouseout', function() {
 })
 
 let toolTip = d3.select('#banana')
-    .append('div')
-    .attr("class", "tooltip")
-    .style("opacity", 0)
-    .style("background-color", "#faebd7")
-    .style("border", "solid")
-    .style("border-width", "1.5px")
-    .style("border-radius", "5px")
-    .style("padding", "5px")
-    .style("width", "260px")
-    .style("height","90%")
-    .style('margin-top','10px')
+    // .append('div')
+    // .attr("class", "tooltip")
+    // .style("opacity", 0)
+    // .style("background-color", "#faebd7")
+    // .style("border", "solid")
+    // .style("border-width", "1.5px")
+    // .style("border-radius", "5px")
+    // .style("padding", "5px")
+    // .style("width", "260px")
+    // .style("height","90%")
+    // .style('margin-top','10px')
     // .style('position','absolute')
 
 function mouseOver(d) {
-    toolTip.html(`<br>State: ${d.dataset.name}<br><br>Percent Vaccinated: ${d.dataset.pct}<br>Percent Vaccinated w/ Booster: ${d.dataset.addpct}`)
-    toolTip.style("opacity", 1)
+    toolTip.html(`${d.dataset.name}`)
+    // <br><br>Percent Vaccinated: ${d.dataset.pct}<br>Percent Vaccinated w/ Booster: ${d.dataset.addpct}`)
+    toolTip.style("opacity", 0.6).style("font-family", "Adamina").style("font-size", "40px").style('color', 'rgb(40,40,40)')
+    .style('width', '10%')
     d.append(toolTip)
 }
 
@@ -185,6 +187,7 @@ let drawMap = () => {
         donut.push(+(e.target.dataset.onePlus), +(e.target.dataset.twoPlus), +(e.target.dataset.threePlus))
         counter++
         d3.select('.tools').style('opacity', 1)
+        toolTip.style('opacity', 1)
         const data22 = {
             labels: [
               '5',
@@ -216,7 +219,7 @@ let drawMap = () => {
                     color: 'rgb(40,40,40)',
                     display: true,
                     text: "Percent of Population Vaccinated by >= Age",
-                    font: {family: "'Times New Roman'", size: 18, weight: 250}
+                    font: {family: "'Roboto'", size: 18, weight: 400}
                 },
                 tooltip: {
                     // position: 'nearest',
@@ -228,7 +231,7 @@ let drawMap = () => {
                     borderWidth: 1,
                     displayColors: false,
                     font: {
-                        family: "'Times New Roman'", size: 14, weight: 150
+                        family: "'Roboto'", size: 14, weight: 150
                     },
                     bodyColor: 'rgb(40,40,40)',
                     padding: 10
