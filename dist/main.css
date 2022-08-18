@@ -60,11 +60,11 @@ svg {
 .nav {
     z-index: 4;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-width: 100vw;
     min-height: 5vh;
-    background-color: rgb(160, 158, 158);
+    background-color: #deb887;
     top: 0px;
 }
 
@@ -211,7 +211,7 @@ color: darkslategrey
     cursor: pointer;
     color: darkslategrey
     }
-#gmail {
+#gmail, #logo {
     font-size: 35px;
     cursor: pointer;
     color: darkslategrey
@@ -220,10 +220,25 @@ color: darkslategrey
     width: 20px;
 }
 
-#gmail:hover, #linkedin:hover, #github:hover {
+#gmail:hover, #linkedin:hover, #github:hover, #logo:hover {
     color: rgb(70, 123, 123);
     transform:scale(1.1);
     transition: ease;
+}
+
+#refresh { color: transparent;}
+
+#logo {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 0.5rem;
+    width: 5rem;
+}
+
+#links {
+    display: flex;
+    justify-content: center;
+    margin-right: 0.5rem;
 }
 
 #vaxhes-p {
@@ -360,7 +375,7 @@ font-family: 'Roboto Light';
 
 .credits {
     display: flex;
-    opacity: 0.6;
+    /* opacity: 0.6; */
     flex-direction: column;
     justify-content: center;
     /* height: 100%;
@@ -368,8 +383,21 @@ font-family: 'Roboto Light';
     background-color: transparent;
 }
 
-.credits:hover {
+#credits-title:hover, #cdc:hover, #diego:hover, #tianshu:hover {
     opacity: 1.0;
+    transform: scale(1.1);
+}
+
+#don {
+    color: firebrick;
+}
+
+#credits-title {
+    opacity: 0.8;
+}
+
+#cdc, #diego, #tianshu {
+    opacity: 0.6;
 }
 
 #credits-title {
