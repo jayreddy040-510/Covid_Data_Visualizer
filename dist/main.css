@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width:75rem;
+    width:95rem;
     z-index: 4;
     align-self: center;
     margin-top: 2rem;
@@ -138,7 +138,7 @@ canvas {
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 30%;
+    /* width: 30%; */
 }
 
 .donuttt {
@@ -204,24 +204,24 @@ button {
 #github {
 font-size: 35px;
 cursor: pointer;
-color: darkslateblue
+color: #324ab2
 }
 #linkedin {
     font-size: 35px;
     cursor: pointer;
-    color: darkslateblue
+    color: #324ab2
     }
 #gmail {
     font-size: 35px;
     cursor: pointer;
-    color: darkslateblue
+    color: #324ab2
     }    
 .space {
     width: 20px;
 }
 
 #gmail:hover, #linkedin:hover, #github:hover {
-    color: rgb(110, 103, 156);
+    color: #6f83dd;
     transform:scale(1.1);
     transition: ease;
 }
@@ -250,13 +250,99 @@ color: darkslateblue
     
 }
 
+#legend-title {
+    font-family: 'Adamina';
+    color: rgb(40,40,40);
+}
+
+#legend-main-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 10rem;
+    height: 100%;
+}
 #legend-main {
     display: flex;
     width: 10rem;
-    background-color: black;
+    background-color: transparent;
+    height: 1.5rem;
+    border: solid;
+    border-width: 0.8px;
+    border-color: rgb(40,40,40);
+}
+
+#legend-main2 {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+    background-color: transparent;
     height: 1.5rem;
 }
 
+#legend-main2 div {
+    font-size: 14px;
+    color: rgb(40, 40, 40);
+    font-family: 'Adamina';
+}
+
+#legend-main div {
+    width: 20%;
+    border: rgb(40,40,40);
+    border-width: 3px;
+    cursor: pointer;
+}
+
+.leg1 {
+    background-color: firebrick;
+}
+
+.leg1:hover {
+    background-color: rgb(232, 98, 98);
+}
+
+.leg2 {
+    background-color: orange;
+}
+
+.leg2:hover {
+    background-color: rgb(255, 209, 123);
+}
+
+.leg3 {
+    background-color: #ffe75e;
+}
+
+.leg3:hover {
+    background-color: #fef2ae;
+}
+
+.leg4 {
+    background-color: #8bbe1b;
+}
+
+.leg4:hover {
+    background-color: #cae296;
+}
+
+.leg5 {
+    background-color: #195905;
+}
+
+.leg5:hover {
+    background-color: #638958;
+}
+
+#pleg-1 {
+    font-family: 'Adamina';
+    color: rgb(40, 40, 40);
+    font-size: 12px;
+    margin: 0;
+    align-self: center;
+    height: 1rem;
+}
+
 blah {
-    color: #ffe75e
+    color: #6f83dd
 }

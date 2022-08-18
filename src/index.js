@@ -50,6 +50,51 @@ const firstQuint = min + quintile;
 const secondQuint = firstQuint + quintile;
 const thirdQuint = secondQuint + quintile;
 const fourthQuint = thirdQuint + quintile;
+const leg1 = d3.select('.leg1')
+
+d3.select('#legend-main-parent').append('p').attr('id', 'pleg-1').style('opacity', 0)
+d3.select('.leg1').on('mouseover', function() {
+    d3.select('#pleg-1').style('opacity', 1).text(`x < ${Math.round(firstQuint)}`)
+})
+d3.select('.leg1').on('mouseout', function() {
+    d3.select('#pleg-1').style('opacity', 0)
+})
+d3.select('.leg2').on('mouseover', () => {
+
+    d3.select('#pleg-1').text(`${Math.round(firstQuint)} < x < ${Math.round(secondQuint)}`)
+    .style('opacity', 1)
+
+})
+d3.select('.leg2').on('mouseout', function() {
+    d3.select('#pleg-1').style('opacity', 0)
+})
+d3.select('.leg3').on('mouseover', () => {
+
+    d3.select('#pleg-1').text(`${Math.round(secondQuint)} < x < ${Math.round(thirdQuint)}`)
+    .style('opacity', 1)
+
+})
+d3.select('.leg3').on('mouseout', function() {
+    d3.select('#pleg-1').style('opacity', 0)
+})
+d3.select('.leg4').on('mouseover', () => {
+
+    d3.select('#pleg-1').text(`${Math.round(thirdQuint)} < x < ${Math.round(fourthQuint)}`)
+    .style('opacity', 1)
+
+})
+d3.select('.leg4').on('mouseout', function() {
+    d3.select('#pleg-1').style('opacity', 0)
+})
+d3.select('.leg5').on('mouseover', () => {
+
+    d3.select('#pleg-1').text(`x > ${Math.round(fourthQuint)}`)
+    .style('opacity', 1)
+
+})
+d3.select('.leg5').on('mouseout', function() {
+    d3.select('#pleg-1').style('opacity', 0)
+})
 
 let toolTip = d3.select('#banana')
     .append('div')
@@ -61,7 +106,7 @@ let toolTip = d3.select('#banana')
     .style("border-radius", "5px")
     .style("padding", "5px")
     .style("width", "260px")
-    .style("height","100%")
+    .style("height","90%")
     .style('margin-top','10px')
     // .style('position','absolute')
 
@@ -147,12 +192,12 @@ let drawMap = () => {
               '65'
             ],
             datasets: [{
-              label: 'Percent of population vaccinated at the following age or older',
+            //   label: 'Percent of population vaccinated at the following age or older',
               data: donut,
-              backgroundColor: 'darkslateblue',
+              backgroundColor: '#324ab2',
               barPercentage: 0.4,
               borderColor: 'grey',
-              hoverBackgroundColor: ['rgb(105, 98, 152)'],
+              hoverBackgroundColor: '#6f83dd',
               hoverOffset: 4
             }]
           };
@@ -167,24 +212,25 @@ let drawMap = () => {
                 },
                 title: {
                     position: 'top',
-                    padding: 20,
+                    padding: 30,
                     color: 'rgb(40,40,40)',
                     display: true,
-                    text: "Percent of Population Vaccinated at the Following Age or Older",
+                    text: "Percent of Population Vaccinated by >= Age",
+                    font: {family: "'Times New Roman'", size: 18, weight: 250}
                 },
                 tooltip: {
                     // position: 'nearest',
-                    backgroundColor: '#faebd7',
-                    titleColor: '#faebd7',
-                    footerColor: '#faebd7',
+                    backgroundColor: 'floralwhite',
+                    titleColor: 'floralwhite',
+                    footerColor: 'floralwhite',
                     titleFont: {size: 0},
-                    borderColor: 'rgb(0,0,0)',
+                    borderColor: 'rgb(40,40,40)',
                     borderWidth: 1,
                     displayColors: false,
                     font: {
-                        family: "'Times New Roman'"
+                        family: "'Times New Roman'", size: 14, weight: 150
                     },
-                    bodyColor: 'rgb(0,0,0)',
+                    bodyColor: 'rgb(40,40,40)',
                     padding: 10
                 }
              }
@@ -219,7 +265,7 @@ let drawMap = () => {
         else if (pct <= secondQuint && pct > firstQuint) return 'orange'
         else if (pct <= thirdQuint && pct > secondQuint) return '#ffe75e'
         else if (pct <= fourthQuint && pct > thirdQuint) return '#8bbe1b'
-        else if (pct > fourthQuint) return "green"
+        else if (pct > fourthQuint) return "#195905"
         })
 
 
