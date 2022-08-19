@@ -1,7 +1,7 @@
 ##Background
 ---
 ---
-Visualizes data around COVID, tracking increases and falls in key elements. I especially would like to track vaccine adverse event reporting to indicate a lack of adverse event in contrary to certain bipartisan narratives. If there is enough interesting data, I would ideally like to make the entire visualizer and page using the VAERS sub database of the CDC's WONDER database. VAERS reports on vaccine events and is a self-reporting system so it tracks a lot of interesting data. The VAERS database is updated monthly by the CDC.
+Visualizes data around COVID, tracking increases and falls in key elements. I especially would like to track vaccine rates and booster rates when compared across the country. The goal for the project is to choose an API that is regularly updated and robust enough to depict a good snapshot of contemporary COVID vaccination efforts. The tool will be designed to be responsive, user-friendly, visually appealing, and completely dynamic - connecting to strong, thorough, and present-day data. If there is enough interesting data, I would like to show multiple snapshots of COVID Vaccination - answering a question akin to 'How many people in a state are COVID vaccination hesitant?'
 
 
 Functionality and MVP's
@@ -10,16 +10,16 @@ Functionality and MVP's
 
 In COVID_Data_Visualizer, users will be able to:
 
-1) Access continuously updated data on vaccine adverse events and other relevant topics via the CDC WONDER API
+1) Access continuously updated data on vaccine adverse events and other relevant topics via several API's available via Data.CDC.gov
 2) Interact with graphs, charts other data visuals with a variety of :hover and :active events.
 3) See a variety of stylized representations of data.
-4) Interact with a flat, minimalist design page.
+4) Interact with a flat, minimalist design page - learning about several comparable parameters that measure a state's COVID vaccination effort and it's peoples' responses to said effort.
 
 In addition, this project will include:
 
-1) An About modal describing where the data was sourced from, instruction for use of the visualizer, and maybe even a small about the author section.
+1) An About modal describing where the data was sourced from, brief instructions for use of the visualizer, and links by which users can professionally connect with me.
 2) A production README.
-3) Light mode/Dark mode toggle button?
+
 
 Wireframe(s)
 ---
@@ -33,10 +33,8 @@ Technologies, Libraries, and API's
 
 1) D3.js
 2) Charts.js
-3) CDC WONDER API
-4) Three.js
-5) Pts.js
-5) Anime.js
+3) Data.CDC.gov
+4) Google Fonts API
 
 Implementation Timeline
 ---
@@ -60,5 +58,5 @@ Bonus Features
 ---
 
 1) Light mode dark mode toggle with different color sets.
-2) modals at first landing on page as well as maybe for about the author section.
+2) Modals at first landing on page as well as maybe for about the author section.
 3) screenshot button?
