@@ -1,5 +1,38 @@
 document.addEventListener('DOMContentLoaded', async () => {
 const body = d3.select('body')
+const menuDivs = d3.selectAll('#menu div')
+let menuHidden = true;
+const menu = d3.select('#menu')
+const menuButton = d3.select('#hamburger')
+menu.style('pointer-events', 'none')
+menuButton.on('click', () => {
+    if (menuHidden) {
+        menu.style('opacity', 1);
+        menuButton.style('color', 'rgb(70, 123, 123)')
+        menu.style('pointer-events', 'all')
+    } else {
+        menu.style('pointer-events', 'none')
+        menu.style('opacity', 0);
+        menuButton.style('color', 'darkslategrey')
+        menuButton.on('mouseover', () => {
+            menuButton.style('color', 'rgb(70, 123, 123)')
+        })
+        menuButton.on('mouseout', () => {
+            if (menuHidden) {
+                menuButton.style('color', 'darkslategrey')
+            }
+        })
+    }
+    
+    menuHidden = !menuHidden
+    
+    }
+
+
+)
+
+
+
 body.style('cursor','pointer')
 const modalContainer = d3.select('.modal-container')
 modalContainer.on('click', function () {
