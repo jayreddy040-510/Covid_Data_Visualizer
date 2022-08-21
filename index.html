@@ -8,7 +8,6 @@
       
       <title>Vaccination Tracker</title>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Augsburg_Bus_52.svg/1200px-Augsburg_Bus_52.svg.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Adamina">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     </head>
@@ -30,7 +29,13 @@
       </div>
       
       <div class="meat">
+        
+        <!-- <g class="nav-logo">
+          <a href="#" id="refresh" onclick="window.location.reload(true);">
+            <div id="logo"><i class="fa-solid fa-0"></i><i class="fa-solid fa-5"></i><i class="fa-solid fa-2"></i></div></a>
+          </g> -->
       <div class="nav">
+        <i id="hamburger" class="fa-solid fa-bars"></i>
         <a href="#" id="refresh" onclick="window.location.reload(true);"><div id="logo"><i class="fa-solid fa-0"></i><i class="fa-solid fa-5"></i><i class="fa-solid fa-2"></i></div></a>
       <div id="links">
         <a  href="mailto:jayreddy@gmail.com"><i id="gmail" class="fa-solid fa-envelope"></i></a>
@@ -48,6 +53,24 @@
           <div id="header"> 
             <h1><span id="strong">052:</span> <span id="weak">Tracking the Weekly Progress of the National Coronavirus Vaccination Effort</span></h1>
           </div>
+
+          <div id="legend-main-parent">
+            <div id="take-spacer">
+            <p id="legend-title"><span id="map-legend-title">Map Legend:</span> <span id="map-legend-non-title">% Population Vaccinated</span></p>
+            <div id="legend-main">
+              <div class="leg1"></div>
+              <div class="leg2"></div>
+              <div class="leg3"></div>
+              <div class="leg4"></div>
+              <div class="leg5"></div>
+            </div>
+            <div id="legend-main2">
+              <div class="leg-less">less</div>
+             
+              <div class="leg-more">more</div>
+            </div>
+          </div>
+        </div>
           
           <svg id="canvas"></svg>
         </div>
@@ -71,7 +94,7 @@
           <!-- <div id="mom">- Malathi 'Momma' Reddy</div> -->
         </div>
       </div>
-        <div id="legend-main-parent">
+        <!-- <div id="legend-main-parent">
           <div id="take-spacer">
           <p id="legend-title"><span id="map-legend-title">Map Legend:</span> <span id="map-legend-non-title">% Population Vaccinated</span></p>
           <div id="legend-main">
@@ -87,7 +110,7 @@
             <div class="leg-more">more</div>
           </div>
         </div>
-      </div>
+      </div> -->
 
         <div class="donuttt"></div>
         

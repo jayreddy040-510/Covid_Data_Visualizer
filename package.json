@@ -23,7 +23,9 @@
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.54.4",
     "sass-loader": "^13.0.2",
-    "webpack": "^5.74.0",
+    "webpack": "^5.74.0"
+  },
+  "devDependencies": {
     "webpack-cli": "^4.10.0"
   }
 }

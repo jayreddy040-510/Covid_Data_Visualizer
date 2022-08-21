@@ -68,6 +68,17 @@ svg {
     top: 0px;
 }
 
+.nav-logo {
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 5vh;
+    background-color: transparent;
+    top: 0px;
+}
+
 .headings {
     display: flex;
     justify-content: center;
@@ -185,7 +196,7 @@ canvas {
 
 
 .modal-container{
-    z-index: 5;
+    z-index: 7;
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.3);
     top: 0;
@@ -234,19 +245,16 @@ button {
     padding: 8px, 20px;
 }
 
-
-
-#github {
-font-size: 35px;
-cursor: pointer;
-color: darkslategrey
-}
-#linkedin {
+#hamburger {
     font-size: 35px;
-    cursor: pointer;
-    color: darkslategrey
-    }
-#gmail, #logo {
+cursor: pointer;
+color: darkslategrey;
+margin-left: 0.5rem;
+width: 10rem;
+}
+
+
+#gmail, #logo, #linkedin, #github {
     font-size: 35px;
     cursor: pointer;
     color: darkslategrey
@@ -255,9 +263,9 @@ color: darkslategrey
     width: 20px;
 }
 
-#gmail:hover, #linkedin:hover, #github:hover{
+#gmail:hover, #linkedin:hover, #github:hover, #hamburger:hover{
     color: rgb(70, 123, 123);
-    transition:  5s ease-in-out;
+    transition:  0.3s ease-in-out;
 }
 
 #refresh { color: transparent;}
@@ -265,13 +273,13 @@ color: darkslategrey
 #logo {
     display: flex;
     justify-content: space-evenly;
-    margin-left: 0.5rem;
     width: 5rem;
 }
 
 #links {
     display: flex;
     justify-content: center;
+    width: 10rem;
     margin-right: 0.5rem;
 }
 
@@ -300,8 +308,9 @@ color: darkslategrey
 }
 
 #legend-title {
-    font-family: 'Roboto';
+    font-family: 'Courier New', Courier, monospace;
     color: rgb(40,40,40);
+    height: 22%;
 }
 
 #map-legend-title {
@@ -313,18 +322,30 @@ color: darkslategrey
 }
 
 #legend-main-parent {
+    z-index: 6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     /* align-items: center; */
-    width: 13rem;
+    width: 10%;
+    position: absolute;
     height: 100%;
+    margin-left: 13%;
+}
+
+#take-spacer {
+    width: 82%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 11%;
 }
 #legend-main {
     display: flex;
-    width: 12rem;
+    width: 100%;
     background-color: transparent;
-    height: 1.5rem;
+    /* height: 1.5rem; */
+    height: 15%;
     border: solid;
     border-width: 0.8px;
     border-color: rgb(40,40,40);
@@ -333,9 +354,9 @@ color: darkslategrey
 #legend-main2 {
     display: flex;
     justify-content: space-between;
-    width: 12rem;
+    width: 100%;
     background-color: transparent;
-    height: 1.5rem;
+    /* height: 1.5rem; */
 }
 
 #legend-main2 div {
@@ -399,14 +420,14 @@ font-family: 'Roboto Light';
 }
 
 #pleg-1 {
-    font-family: 'Adamina';
+    font-family: 'Roboto Light';
     color: rgb(40, 40, 40);
     font-size: 14px;
     margin: 0;
     align-self: center;
     justify-self: center;
     height: 2rem;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .credits {
