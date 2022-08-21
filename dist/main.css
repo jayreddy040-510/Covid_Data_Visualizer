@@ -255,10 +255,9 @@ color: darkslategrey
     width: 20px;
 }
 
-#gmail:hover, #linkedin:hover, #github:hover, #logo:hover {
+#gmail:hover, #linkedin:hover, #github:hover{
     color: rgb(70, 123, 123);
-    transform:scale(1.1);
-    transition: ease;
+    transition:  5s ease-in-out;
 }
 
 #refresh { color: transparent;}
