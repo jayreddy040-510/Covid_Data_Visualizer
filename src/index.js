@@ -3,7 +3,13 @@ const body = d3.select('body')
 const menuDivs = d3.selectAll('#menu div')
 let menuHidden = true;
 const menu = d3.select('#menu')
+const allSubMenus = d3.selectAll('.menu-click')
 const menuButton = d3.select('#hamburger')
+const menuBack = d3.selectAll('#menu-back')
+const creditsMenu = d3.select('#menu-credits-click')
+const creditsDiv = d3.select('#menu-credits')
+const apiDiv = d3.select('#menu-api')
+const apiMenu = d3.select('#menu-api-click')
 menu.style('pointer-events', 'none')
 menuButton.on('click', () => {
     if (menuHidden) {
@@ -13,6 +19,8 @@ menuButton.on('click', () => {
     } else {
         menu.style('pointer-events', 'none')
         menu.style('opacity', 0);
+        allSubMenus.style('pointer-events', 'none')
+        allSubMenus.style('opacity', 0);
         menuButton.style('color', 'darkslategrey')
         menuButton.on('mouseover', () => {
             menuButton.style('color', 'rgb(70, 123, 123)')
@@ -30,6 +38,21 @@ menuButton.on('click', () => {
 
 
 )
+
+creditsDiv.on('click', () => {
+    creditsMenu.style('opacity', 1).style('pointer-events', 'all')
+})
+apiDiv.on('click', () => {
+    apiMenu.style('opacity', 1).style('pointer-events', 'all')
+})
+
+menuBack.on('click', () => {
+    allSubMenus.style('pointer-events', 'none')
+    allSubMenus.style('opacity', 0);
+    menu.style('opacity', 1);
+    menuButton.style('color', 'rgb(70, 123, 123)')
+    menu.style('pointer-events', 'all')
+})
 
 
 
