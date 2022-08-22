@@ -355,7 +355,7 @@ let drawMap = () => {
                     color: 'rgb(40,40,40)',
                     display: true,
                     text: `Percent of ${xyz} Population Vaccinated by >= Age`,
-                    font: {family: "'Roboto'", size: 18, weight: 375}
+                    font: {family: "'Roboto', sans-serif", size: 18, weight: 400}
                 },
                 tooltip: {
                     // position: 'nearest',

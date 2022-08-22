@@ -29,7 +29,8 @@ body {
 } */
 
 #api-click, #notes-click, #updated-click, #credits-click {
-    font-family: 'Roboto Black'
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }
 
 svg {
@@ -52,17 +53,21 @@ svg {
     /* max-width: 40px; */
     width: 100px;
     height: 100%;
-    font-family: 'Roboto Light';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     margin-right: 4rem;
 }
 
 #strong {
     font-size: 65px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     color: rgb(40,40,40);
 }
 
 #weak {
-    font-family: 'Roboto Thin';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }
 
 #menu, .menu-click {
@@ -129,7 +134,8 @@ align-items: flex-start;
     height: 20%;
     width: 100%;
     font-size: 20px;
-    font-family: 'Roboto Light';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     background: #f7e8cd;
 }
 
@@ -143,7 +149,8 @@ align-items: flex-start;
     background-color: #fff1d4;
     color: rgb(70, 123, 123);
     cursor: pointer;
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 #credits-click {
     background-color: #fff1d4;
@@ -500,7 +507,8 @@ width: 10rem;
     opacity: 0.8;
     font-size: 14;
     text-align: center;
-    font-family: 'Roboto Thin';
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
     margin: 0;
 }
 
@@ -517,7 +525,8 @@ width: 10rem;
 #vax-hes{
     font-size: 55px;
     margin: 0;
-    font-family: 'Roboto Light';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     
 }
 
@@ -528,11 +537,13 @@ width: 10rem;
 }
 
 #map-legend-title {
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 #map-legend-non-title {
-    font-family: 'Roboto Light';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 #legend-main-parent {
@@ -584,11 +595,13 @@ width: 10rem;
 }
 
 .leg-less {
-font-family: 'Roboto Light';
+font-family: 'Roboto', sans-serif;
+font-weight:100;
 }
 
 .leg-more {
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 #legend-main div {
@@ -639,7 +652,8 @@ font-family: 'Roboto Light';
 }
 
 #pleg-1 {
-    font-family: 'Roboto Light';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     color: rgb(40, 40, 40);
     font-size: 14px;
     margin: 0;
@@ -686,13 +700,15 @@ font-family: 'Roboto Light';
 #credits-title {
     font-size: 35px;
     color: rgb(40,40,40);
-    font-family: 'Roboto Medium';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     opacity: 0.8;
     margin-left: 0.5rem;
 }
 
 #extra-div {
-    font-family: 'Roboto Light'
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 
