@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
 const body = d3.select('body')
+const meat = d3.select('.meat')
 const menuDivs = d3.selectAll('#menu div')
 let menuHidden = true;
 const menu = d3.select('#menu')
@@ -10,6 +11,10 @@ const creditsMenu = d3.select('#menu-credits-click')
 const creditsDiv = d3.select('#menu-credits')
 const apiDiv = d3.select('#menu-api')
 const apiMenu = d3.select('#menu-api-click')
+const updatedDiv = d3.select('#menu-updated')
+const updatedMenu = d3.select('#menu-updated-click')
+const updatedDateDiv = d3.select('#append-date')
+
 menu.style('pointer-events', 'none')
 menuButton.on('click', () => {
     if (menuHidden) {
@@ -45,6 +50,10 @@ creditsDiv.on('click', () => {
 apiDiv.on('click', () => {
     apiMenu.style('opacity', 1).style('pointer-events', 'all')
 })
+updatedDiv.on('click', () => {
+    updatedMenu.style('opacity', 1).style('pointer-events', 'all')
+})
+
 
 menuBack.on('click', () => {
     allSubMenus.style('pointer-events', 'none')
@@ -53,6 +62,7 @@ menuBack.on('click', () => {
     menuButton.style('color', 'rgb(70, 123, 123)')
     menu.style('pointer-events', 'all')
 })
+
 
 
 
@@ -95,6 +105,23 @@ const getVaxData = async () => {
     }
 }
 
+const getDate = async () => {
+    try{
+        let response = await fetch(`https://data.cdc.gov/resource/unsk-b7fc.json?$query=SELECT  date WHERE location NOT IN ('BP2','US','DD2','GU','AS','FM','IH2','MH','MP','PW','VA2','VI','UM') LIMIT 1`);
+        let z = response.json();
+        return z;
+    }catch(err){
+        console.error(err);
+    }
+}
+
+let date = await getDate();
+
+let lastUpdated = Object.values(date[0])[0]
+
+lastUpdated = lastUpdated.split('T').join(' ')
+
+updatedDateDiv.append('span').text(`${lastUpdated}`).style('color', 'darkslategrey')
 
 let data =  await getVaxData();
 
