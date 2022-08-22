@@ -16,9 +16,9 @@ body {
     background-color: transparent;
     opacity: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width:100rem;
+    width:100%;
     z-index: 4;
     align-self: center;
     margin-top: 2rem;
@@ -205,12 +205,14 @@ align-items: flex-start;
     top: 0px;
 }
 
-.headings {
+@media only screen and (min-width: 1441px){ 
+    .headings {
     display: flex;
     justify-content: center;
-    width: 120rem;
+    width: 100%;
     height: 60vh;
     top: 0px;
+}
 }
 
 .line {
@@ -225,10 +227,91 @@ align-items: flex-start;
 
 }
 
-@media only screen and (max-width: 1200px){
- .line {
+/* .headings {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 58vh;
+    margin-left: 0%;
+    top: 0px;
+} */
+
+@media only screen and (max-width: 1440px){
+.line {
     background-color: red;
- };
+    margin-top: 0.5rem;
+}
+.headings {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 58vh;
+    top: 0px;
+    /* transform: translateX(-50px) */
+}
+
+#header {
+    margin-right: -4rem; /* play with this */
+    height: 106%;
+}
+
+h1 {
+    font-size: 41px;
+}
+
+#strong {
+    font-size: 55px;
+}
+
+#weak {
+    font-size: 35px;
+}
+
+#menu, .menu-click {
+    width: 17%;
+    height: 57%;
+}
+
+#canvas {
+    transform: translateY(-8%) scale(0.8);
+    min-height: 79vh;
+
+}
+
+#legend-main-parent {
+    margin-left: 12%; /* play with this with header margin right */
+    margin-top: 23.95%;
+    transform: translateY(40px) translateX(25px);
+}
+
+#legend-title {
+    margin-bottom: 36px;
+}
+
+#pleg-1 {
+    font-size: 12px;
+    margin-top: -0%; /* see if this hits */
+    transform: translateY(-5px)
+}
+
+.tools {
+    margin-top: 1rem;
+    /* width: 100rem;
+    justify-content: space-evenly; */
+}
+
+#menu-back, #menu-back-patch-subnotes {
+    top: 1%;
+}
+
+#append-date span {
+    font-size: 38px;
+}
+
+/* #vaxhes-div {
+    margin-top: 1%;
+}  added to main - see if u like */
+
 }
 
 .meat {
@@ -277,6 +360,7 @@ canvas {
     height: 100%;
     flex-direction: column;
     width: 20%;
+    margin-bottom: 1%;
 }
 
 #banana {
@@ -424,6 +508,7 @@ width: 10rem;
     justify-content: center;
     align-items: center;
     margin: 0;
+    margin-top: 1%;
     /* width: 20% */
 }
 
