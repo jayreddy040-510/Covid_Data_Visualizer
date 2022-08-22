@@ -77,15 +77,10 @@ Bonus Features
 2) Modal for landing page.
 3) Vaccine hesitation rating per state.
 
-Interactions
----
----
-
-1) 
-
 
 To Do
 ---
 ---
 
-1) Troubleshoot Google Fonts API
+1) Troubleshoot Google Fonts API.
+2) Hierarchize Font Families.
