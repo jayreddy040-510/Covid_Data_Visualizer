@@ -81,6 +81,3 @@ Bonus Features
 To Do
 ---
 ---
-
-1) Troubleshoot Google Fonts API.
-2) Hierarchize Font Families.
