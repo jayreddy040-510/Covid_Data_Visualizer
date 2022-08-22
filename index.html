@@ -30,7 +30,7 @@
       <div id="menu">
         <div id="menu-credits"><span>Credits</span></div>
         <div id="menu-api"><span>API's/Libraries Used</span></div>
-        <div id="menu-updated"><span>Last Updated</span></div>
+        <div id="menu-updated"><span>Map Last Updated</span></div>
         <div id="patch-notes"><span>Patch Notes</span></div>
         <div id="coffee"><a target="_blank" href="https://www.buymeacoffee.com/jayreddy8"><span>Buy Me A Coffee! <i id="coffee-icon" class="fa-solid fa-mug-hot"></span></i></a></div>
 
@@ -56,17 +56,22 @@
       </div>
 
       <div id="menu-updated-click" class="menu-click">
-        <div id="updated-click"><i id="menu-back" class="fas fa-long-arrow-left"></i><span>Last Updated:</span></div>
+        <div id="updated-click"><i id="menu-back" class="fas fa-long-arrow-left"></i><span>Map Last Updated:</span></div>
         <div id="append-date"></div>
       </div>
 
-     <!--  <div id="patch-notes-click" class="menu-click">
-        <div id="notes-click"><span>Patch Notes:</span></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div> -->
+      <div id="patch-notes-click" class="menu-click">
+        <div id="notes-click"><i id="menu-back" class="fas fa-long-arrow-left"></i><span>Patch Notes:</span></div>
+        <div id="patch-beta"><span class="sub-span">Patch 0.5 (Beta)</span></div>
+        <div class="unfilled-patch"></div>
+        <div class="unfilled-patch"></div>
+        <div class="unfilled-patch"></div>
+      </div>
+
+      <div id="patch-notes-beta" class="menu-click">
+        <div id="patch-notes-beta-click"><i id="menu-back-patch-subnotes" class="fas fa-long-arrow-left"></i><span>Patch 0.5 (Beta):</span></div>
+        <div id="patch-notes-beta-description"><span id="patch-description-span" class="sub-span">Welcome to the 052 beta! We're currently figuring out what kind of scope we want to take on. What kind of data do users want to see and what are the best ways to visualize said data? What lines of inquiry start from the data we collect here? When will the database be deprecated? These and many more questions are on our mind. Stay tuned for more!  </span></div>
+      </div>
 
 
 
@@ -77,7 +82,7 @@
             <div id="logo"><i class="fa-solid fa-0"></i><i class="fa-solid fa-5"></i><i class="fa-solid fa-2"></i></div></a>
           </g> -->
       <div class="nav">
-        <i id="hamburger" class="fa-solid fa-bars"></i>
+        <div id="hamburger-spacer"><i id="hamburger" class="fa-solid fa-bars"></i></div>
         <a href="#" id="refresh" onclick="window.location.reload(true);"><div id="logo"><i class="fa-solid fa-0"></i><i class="fa-solid fa-5"></i><i class="fa-solid fa-2"></i></div></a>
       <div id="links">
         <a  target="_blank" href="mailto:jayreddy@gmail.com"><i title="Email" id="gmail" class="fa-solid fa-envelope"></i></a>

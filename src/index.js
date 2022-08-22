@@ -14,6 +14,11 @@ const apiMenu = d3.select('#menu-api-click')
 const updatedDiv = d3.select('#menu-updated')
 const updatedMenu = d3.select('#menu-updated-click')
 const updatedDateDiv = d3.select('#append-date')
+const patchDiv = d3.select('#patch-notes')
+const patchMenu = d3.select('#patch-notes-click')
+const patchBeta = d3.select('#patch-beta')
+const patchNotesBeta = d3.select('#patch-notes-beta')
+const backToPatch = d3.select('#menu-back-patch-subnotes')
 
 menu.style('pointer-events', 'none')
 menuButton.on('click', () => {
@@ -53,6 +58,14 @@ apiDiv.on('click', () => {
 updatedDiv.on('click', () => {
     updatedMenu.style('opacity', 1).style('pointer-events', 'all')
 })
+patchDiv.on('click', () => {
+    patchMenu.style('opacity', 1).style('pointer-events', 'all')
+})
+patchBeta.on('click', () => {
+    patchMenu.style('opacity', 0).style('pointer-events', 'none')
+    menu.style('opacity', 0).style('pointer-events', 'none')
+    patchNotesBeta.style('opacity', 1).style('pointer-events', 'all')
+})
 
 
 menuBack.on('click', () => {
@@ -61,6 +74,11 @@ menuBack.on('click', () => {
     menu.style('opacity', 1);
     menuButton.style('color', 'rgb(70, 123, 123)')
     menu.style('pointer-events', 'all')
+})
+
+backToPatch.on('click', () => {
+    patchNotesBeta.style('opacity', 0).style('pointer-events', 'none')
+    patchMenu.style('opacity', 1).style('pointer-events', 'all')
 })
 
 
