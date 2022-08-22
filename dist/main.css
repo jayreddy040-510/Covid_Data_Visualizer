@@ -238,8 +238,7 @@ align-items: flex-start;
 
 @media only screen and (max-width: 1440px){
 .line {
-    background-color: red;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
 }
 .headings {
     display: flex;
@@ -268,8 +267,12 @@ h1 {
 }
 
 #menu, .menu-click {
-    width: 17%;
+    width: 20%;
     height: 57%;
+}
+
+#take-spacer {
+    width: 110%;
 }
 
 #canvas {
@@ -281,17 +284,16 @@ h1 {
 #legend-main-parent {
     margin-left: 12%; /* play with this with header margin right */
     margin-top: 23.95%;
-    transform: translateY(40px) translateX(25px);
+    transform: translateY(65px) translateX(5px);
 }
 
 #legend-title {
-    margin-bottom: 36px;
+    margin-bottom: 20px;
 }
 
 #pleg-1 {
     font-size: 12px;
-    margin-top: -0%; /* see if this hits */
-    transform: translateY(-5px)
+    transform: translateY(-5px) translateX(25px)
 }
 
 .tools {
@@ -547,12 +549,14 @@ width: 10rem;
     pointer-events: none;
 }
 
-#take-spacer {
+@media only screen and (min-width: 1441px){
+    #take-spacer {
     width: 82%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+}
 }
 #legend-main {
     display: flex;

@@ -1,7 +1,7 @@
-##Background
+Background
 ---
 ---
-Visualizes data around COVID, tracking increases and falls in key elements. I especially would like to track vaccine rates and booster rates when compared across the country. The goal for the project is to choose an API that is regularly updated and robust enough to depict a good snapshot of contemporary COVID vaccination efforts. The tool will be designed to be responsive, user-friendly, visually appealing, and completely dynamic - connecting to strong, thorough, and present-day data. If there is enough interesting data, I would like to show multiple snapshots of COVID Vaccination - answering a question akin to 'How many people in a state are COVID vaccination hesitant?'
+The name of this project and tool is 052. 052 was built to create a visually-appealing interface that provides users with the most recent data on vaccine progression (via state) through the US. I especially would like to track vaccine rates and booster rates when compared across the country. The goal for the project is to choose an API that is regularly updated and robust enough to depict a good snapshot of contemporary COVID vaccination efforts. The tool will be designed to be responsive, user-friendly, visually appealing, and completely dynamic - connecting to strong, thorough, and present-day data. If there is enough interesting data, I would like to show multiple snapshots of COVID Vaccination - answering a question akin to 'How many people in a state are COVID vaccination hesitant?' As the data is initially sourced and parsed by the CDC, an arm of the US government, all data here lies within the public domain.
 
 
 Functionality and MVP's
@@ -10,22 +10,38 @@ Functionality and MVP's
 
 In COVID_Data_Visualizer, users will be able to:
 
-1) Access continuously updated data on vaccine adverse events and other relevant topics via several API's available via Data.CDC.gov
+1) Access continuously updated data on vaccine rates, booster rates, and other relevant topics via several API's available via Data.CDC.gov
 2) Interact with graphs, charts other data visuals with a variety of :hover and :active events.
 3) See a variety of stylized representations of data.
 4) Interact with a flat, minimalist design page - learning about several comparable parameters that measure a state's COVID vaccination effort and it's peoples' responses to said effort.
+5) Connect directly to the databases and sources through links available on a 'hamburger' menu.
 
 In addition, this project will include:
 
-1) An About modal describing where the data was sourced from, brief instructions for use of the visualizer, and links by which users can professionally connect with me.
+1) An introductory modal briefly describing the project, simple instructions for use of the visualizer, and links by which users can professionally connect with me.
 2) A production README.
 
 
 Wireframe(s)
 ---
 ---
+1) Initial Blueprint Mockup:
+
+
 
 ![Getting Started](Covid_Data_Visualizer_Mockup.png)
+
+
+
+
+
+
+
+2) Production Wireframe:
+
+
+
+![Getting Started](Production_Wireframe.jpg)
 
 Technologies, Libraries, and API's
 ---
@@ -57,6 +73,19 @@ Bonus Features
 ---
 ---
 
-1) Light mode dark mode toggle with different color sets.
-2) Modals at first landing on page as well as maybe for about the author section.
-3) screenshot button?
+1) Menu with a variety of add-ons including but not limited to: a last updated date that pulls directly from the CDC database, patch notes, and a small homage to those who have helped us along the way.
+2) Modal for landing page.
+3) Vaccine hesitation rating per state.
+
+Interactions
+---
+---
+
+1) 
+
+
+To Do
+---
+---
+
+1) Troubleshoot Google Fonts API
