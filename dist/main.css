@@ -90,7 +90,9 @@ align-items: flex-start;
   }
 
 #patch-notes-beta-click {
-    height: 20%;
+    height: 25%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     cursor: auto;
 }
 
@@ -102,6 +104,11 @@ align-items: flex-start;
 
 #patch-description-span {
     width:95%;
+}
+#patch-notes-beta-description:hover {
+    color: darkslategray;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 .unfilled-patch {
@@ -149,11 +156,22 @@ align-items: flex-start;
     width: 100%;
 }
 
+
 #menu div:hover, .menu-click div:hover{
     pointer-events: all;
     /* background-color: #fff1d4; */
     color: rgb(70, 123, 123);
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+div#patch-beta {
+    cursor: pointer;
+}
+
+#beta-sub-menu {
+    width: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
