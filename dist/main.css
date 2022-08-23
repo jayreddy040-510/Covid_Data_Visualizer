@@ -172,7 +172,7 @@ align-items: flex-start;
     text-decoration: inherit;
 }
 #menu div span, .menu-click div span {
-    margin-left: 2%;
+    margin-left: 4%;
     width: 50%;
 
 }
