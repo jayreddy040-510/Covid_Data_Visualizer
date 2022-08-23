@@ -157,9 +157,9 @@ align-items: flex-start;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
-#credits-click {
+/* #credits-click {
     background-color: #fff1d4;
-}
+} */
 #menu-back, #menu-back-patch-subnotes {
     position: absolute;
     top: 2%;
