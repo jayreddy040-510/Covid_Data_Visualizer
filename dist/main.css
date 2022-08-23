@@ -73,7 +73,7 @@ svg {
 #menu, .menu-click {
 position: absolute;
 margin-top: 5vh;
-margin-left: 0;
+margin-left: 15px;
 width: 20%;
 height: 60%;
 background-color: transparent;
@@ -139,6 +139,11 @@ align-items: flex-start;
     background: #f7e8cd;
 }
 
+#blah {
+    color: red;
+    font-size: 25px;
+}
+
 
 .sub-span {
     width: 100%;
@@ -146,7 +151,7 @@ align-items: flex-start;
 
 #menu div:hover, .menu-click div:hover{
     pointer-events: all;
-    background-color: #fff1d4;
+    /* background-color: #fff1d4; */
     color: rgb(70, 123, 123);
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
@@ -470,6 +475,7 @@ cursor: pointer;
 color: darkslategrey;
 margin-left: 0.5rem;
 width: 10rem;
+padding: 10px;
 }
 
 
