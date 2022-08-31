@@ -19,6 +19,7 @@ const patchMenu = d3.select('#patch-notes-click')
 const patchBeta = d3.select('#patch-beta')
 const patchNotesBeta = d3.select('#patch-notes-beta')
 const backToPatch = d3.select('#menu-back-patch-subnotes')
+const modalContainer = d3.select('.modal-container')
 
 menu.style('pointer-events', 'none')
 menuButton.on('click', () => {
@@ -85,7 +86,6 @@ backToPatch.on('click', () => {
 
 
 body.style('cursor','pointer')
-const modalContainer = d3.select('.modal-container')
 modalContainer.on('click', function () {
     body.style('cursor', 'auto')
     modalContainer.style('opacity', '0')
