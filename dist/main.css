@@ -33,6 +33,43 @@ body {
     font-weight: 700;
 }
 
+.click-state {
+    opacity: 0;
+    position: absolute;
+    font-size: 22px;
+    top: 30%;
+    z-index: 10;
+    right: 2%;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.2s ease-in-out;
+    animation-name: left-move;
+    animation-duration: 10s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes left-move {
+    0% { 
+        transform: translateX(0);
+        opacity: 0;
+    }
+    50% { 
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    55% { transform: translateX(0px);}
+    60% { transform: translateX(-15px);}
+    65% { transform: translateX(0px);}
+    70% { transform: translateX(-15px);}
+    75% { transform: translateX(0px);}
+    80% { transform: translateX(-15px);}
+    85% { transform: translateX(0px);}
+    90% { transform: translateX(-15px);}
+    100% { 
+        transform: translateX(0px);
+        opacity: 0;
+    }
+}
+
 svg {
     background-color: transparent;
     z-index: 3;
@@ -236,12 +273,15 @@ div#patch-beta {
 }
 
 @media only screen and (min-width: 1441px){ 
-    .headings {
+.headings {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 60vh;
     top: 0px;
+}
+.click-state {
+    right: 10%;
 }
 }
 
@@ -252,7 +292,7 @@ div#patch-beta {
     background-color: rgba(40,40,40, 0.3);
     min-height: 1.5px;
     border-radius: 10px;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
     align-self: center;
 
 }
@@ -268,7 +308,7 @@ div#patch-beta {
 
 @media only screen and (max-width: 1440px){
 .line {
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 .headings {
     display: flex;
@@ -302,18 +342,13 @@ h1 {
 }
 
 #take-spacer {
-    width: 110%;
+    width: 125%;
 }
 
-#canvas {
-    transform: translateY(-8%) scale(0.8);
-    min-height: 79vh;
-
-}
 
 #legend-main-parent {
     margin-left: 12%; /* play with this with header margin right */
-    margin-top: 23.95%;
+    margin-top: 22.95%;
     transform: translateY(65px) translateX(5px);
 }
 
@@ -377,6 +412,7 @@ position: relative;
 
 #canvas, #canvas2 {
     min-width: 950px;
+    transform: translateY(-12%) scale(0.8);
     min-height: 70vh;
 }
 
@@ -557,7 +593,7 @@ padding: 10px;
 #legend-title {
     font-family: 'Courier New', Courier, monospace;
     color: rgb(40,40,40);
-    height: 22%;
+    height: 30%;
 }
 
 #map-legend-title {
@@ -580,18 +616,25 @@ padding: 10px;
     position: absolute;
     height: 15%;
     margin-left: 13%;
-    margin-top: 21.85%;
+    margin-top: 19.85%;
     pointer-events: none;
 }
 
 @media only screen and (min-width: 1441px){
-    #take-spacer {
-    width: 82%;
+#take-spacer {
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
 }
+
+#canvas, #canvas2 {
+    min-width: 950px;
+    transform: translateY(-5%) scale(0.8);
+    min-height: 70vh;
+}
+
 }
 #legend-main {
     display: flex;
